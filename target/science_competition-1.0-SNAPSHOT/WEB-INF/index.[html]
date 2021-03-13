@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java EE app</title>
+</head>
+<body>
+
+<h1>Научные конкурсы</h1>
+<a href="controller">ссылочка</a>
+</body>
+</html>

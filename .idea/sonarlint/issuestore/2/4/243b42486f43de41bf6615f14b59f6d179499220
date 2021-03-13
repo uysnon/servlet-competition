@@ -1,0 +1,17 @@
+
+q
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ8Ä£Ã´‚/
+N
+java:S1612",Replace this lambda with a method reference.(ÒáÃ‘øÿÿÿÿ8íş³‚/
+Y
+java:S16113"7Remove the parentheses around the "resultSet" parameter(©†î¯úÿÿÿÿ8 €š´‚/
+L
+java:S3740"/Provide the parametrized type for this generic.(ğ§ Ò8¬Úö³‚/
+q
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ8ò¨É´‚/
+N
+java:S1612 ",Replace this lambda with a method reference.(ÒáÃ‘øÿÿÿÿ8½˜´‚/
+q
+java:S2095+"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ8’¨’»‚/
+L
+java:S3740"/Provide the parametrized type for this generic.(‚±Ñ8÷³‚/

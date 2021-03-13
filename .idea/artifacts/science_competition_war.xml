@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="science_competition:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>science_competition</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="science_competition-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="science_competition:war exploded" />
+    </root>
+  </artifact>
+</component>
