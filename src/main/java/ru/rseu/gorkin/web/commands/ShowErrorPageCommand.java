@@ -7,9 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class ShowUsersListCommand implements Command{
+public class ShowErrorPageCommand implements Command {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher(ConfigurationManagers.WEB_MANAGER.getProperty("page.admin.usersList")).forward(request,response);
+        request.getRequestDispatcher(ConfigurationManagers.WEB_MANAGER.getProperty("page.error")).forward(request, response);
     }
 }

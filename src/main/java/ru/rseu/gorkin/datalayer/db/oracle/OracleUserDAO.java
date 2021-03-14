@@ -2,6 +2,7 @@ package ru.rseu.gorkin.datalayer.db.oracle;
 
 import ru.rseu.gorkin.datalayer.dao.AuthenticationResults;
 import ru.rseu.gorkin.datalayer.dao.UserDAO;
+import ru.rseu.gorkin.datalayer.dto.Roles;
 import ru.rseu.gorkin.datalayer.dto.Statuses;
 import ru.rseu.gorkin.datalayer.dto.User;
 
@@ -52,6 +53,26 @@ public class OracleUserDAO implements UserDAO {
     @Override
     public List<User> getAll() {
         return new ArrayList<>(oracleQueriesUtils.getAllUsers(connection));
+    }
+
+    @Override
+    public List<User> getAllByRole(Roles role) {
+        try {
+            return new ArrayList<>(oracleQueriesUtils.getAllUsersByRole(connection, role));
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<User> getAllByStatus(Statuses status) {
+        try {
+            return new ArrayList<>(oracleQueriesUtils.getAllUsersByStatus(connection, status));
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
+        return null;
     }
 
     @Override

@@ -26,9 +26,9 @@ public class UserRightsFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        loggedInUserActions = Stream.of("logout", "show_all_competitions").collect(Collectors.toList());
+        loggedInUserActions = Stream.of("logout", "show_all_competitions", "delete").collect(Collectors.toList());
         participantActions = Stream.of("some_command").collect(Collectors.toList());
-        adminActions = Stream.of("show_users_list").collect(Collectors.toList());
+        adminActions = Stream.of("show_user_list", "block", "unblock").collect(Collectors.toList());
         expertActions = Stream.of("show_works_to_check").collect(Collectors.toList());
         guestActions = Stream.of("show_login_page").collect(Collectors.toList());
     }
@@ -70,7 +70,7 @@ public class UserRightsFilter implements Filter {
                 }
             }
             if (!isUserHaveRights(httpServletRequest, deprecatedActionsList)) {
-                httpServletResponse.sendRedirect(UrlUtils.getCommandUrl("show_all_competitions"));
+                httpServletRequest.getRequestDispatcher(UrlUtils.getCommandUrl("show_all_competitions")).forward(httpServletRequest, httpServletResponse);
                 isUserRightsNormal = false;
             }
 

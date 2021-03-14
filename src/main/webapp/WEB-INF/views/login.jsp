@@ -20,8 +20,8 @@
     <input type="hidden" name="command" value="login" />
     <h1>Вход</h1>
     <fieldset id="inputs">
-        <input id="username" name="login" placeholder="Логин" autofocus="" required="" type="text">
-        <input id="password" name="password" placeholder="Пароль" required="" type="password">
+        <input id="username" name="login" placeholder="Логин" autofocus="" required="" type="text" value="test_admin">
+        <input id="password" name="password" placeholder="Пароль" required="" type="password" value="test_admin">
     </fieldset>
     <br/>
     ${errorLoginPassMessage}

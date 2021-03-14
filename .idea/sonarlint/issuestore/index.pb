@@ -29,8 +29,6 @@ s
 Csrc/main/java/ru/rseu/gorkin/datalayer/db/oracle/OracleUserDAO.java,8\c\8c664fdffff0ad5a3d1f55c3b13219bb9a3c4ca8
 g
 7src/main/webapp/WEB-INF/views/expert/works_to_check.jsp,a\f\af38c43d7e2ef39b81338b2bf5c0e94d125bdcbc
-s
-Csrc/main/webapp/WEB-INF/views/participant/all_competitions_list.jsp,5\f\5fb8453e79b4f78d629fdd60b0c97be46d251cf3
 g
 7src/main/java/ru/rseu/gorkin/datalayer/dao/UserDAO.java,b\c\bc74df011cbc9cdded718abd9df7555662dd2d10
 b
@@ -95,3 +93,15 @@ n
 Wsrc/main/java/ru/rseu/gorkin/datalayer/db/oracle/OracleCompetitionParticipationDAO.java,d\9\d9023f66ce65da4873ef19ce9660af9c601f0620
 f
 6src/main/java/ru/rseu/gorkin/datalayer/dao/DBType.java,7\c\7c38c8b1c84c1b4598a6bea9bb05554bcf0f867c
+g
+7src/main/webapp/WEB-INF/views/all_competitions_list.jsp,8\5\858691a8df5e28e104ea2492c8c4bb66af0f3ffb
+g
+7src/main/java/ru/rseu/gorkin/web/commands/UrlUtils.java,b\f\bf6d2a1c73180b4bb8befa11f6d0811a372b340e
+y
+Isrc/main/java/ru/rseu/gorkin/web/commands/ShowAllCompetitionsCommand.java,1\9\194f6a6b112e0fb1f93d1c72aa299d957f581902
+s
+Csrc/main/java/ru/rseu/gorkin/web/commands/ShowUsersListCommand.java,c\9\c99d030ad5824a82bedbe5b0584f0cc35b776832
+v
+Fsrc/main/java/ru/rseu/gorkin/web/commands/ShowWorksToCheckCommand.java,d\a\dab7da15f67ee648edf9e1872d4a5fbb71fc55af
+n
+>src/main/java/ru/rseu/gorkin/web/filters/UserRightsFilter.java,e\b\eb6dd789a4d835006d56f51703c6f11641bb4769

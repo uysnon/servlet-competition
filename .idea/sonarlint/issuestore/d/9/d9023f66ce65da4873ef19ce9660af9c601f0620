@@ -1,12 +1,12 @@
 
-H
-java:S1168"+Return an empty collection instead of null.(¥¹ï8úù¯¼‚/
-H
-java:S1168"+Return an empty collection instead of null.(¥¹ï8úù¯¼‚/
 K
 java:S1068
 ".Remove this unused "connection" private field.(ÿ›ÅÒ8–µ¶¼‚/
 
 java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(—‡¿Ã8¦ÿ™¿‚/
+H
+java:S1168"+Return an empty collection instead of null.(¥¹ï8úù¯¼‚/
+H
+java:S1168"+Return an empty collection instead of null.(¥¹ï8úù¯¼‚/
 £
 java:S1186 "€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Úˆ¸–ûÿÿÿÿ8úù¯¼‚/

@@ -5,7 +5,10 @@ import ru.rseu.gorkin.datalayer.dto.Statuses;
 import ru.rseu.gorkin.datalayer.dto.User;
 import ru.rseu.gorkin.resources.utils.ConfigurationManagers;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Collection;
 import java.util.function.Function;
 
@@ -36,6 +39,22 @@ public class OracleQueriesUtils {
         String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.user.select.all");
         Function<ResultSet, User> userMapFunction = getUserMapFunction();
         return selectQueriesManager.select(connection, query, userMapFunction);
+    }
+
+    public Collection<User> getAllUsersByRole(Connection connection, Roles role) throws Throwable {
+        String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.user.select.allByRole");
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, role.getId());
+        Function<ResultSet, User> userMapFunction = getUserMapFunction();
+        return selectQueriesManager.selectPrepare(preparedStatement, userMapFunction);
+    }
+
+    public Collection<User> getAllUsersByStatus(Connection connection, Statuses status) throws Throwable {
+        String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.user.select.allByStatus");
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, status.getId());
+        Function<ResultSet, User> userMapFunction = getUserMapFunction();
+        return selectQueriesManager.selectPrepare(preparedStatement, userMapFunction);
     }
 
     public void updateUserStatus(Connection connection, String login, Statuses newStatus) throws SQLException {

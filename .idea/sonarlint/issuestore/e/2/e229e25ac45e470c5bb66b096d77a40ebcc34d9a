@@ -1,14 +1,14 @@
 
-U	java:S106"9Replace this use of System.out or System.err by a logger.(»àß­8â¢»‚/
 U	java:S106"9Replace this use of System.out or System.err by a logger.(¨¾ê8ÁÈŸ»‚/
-m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³®¢€8êÍ´‚/
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(ß¨ôåùÿÿÿÿ8Åãüº‚/
-U	java:S106"9Replace this use of System.out or System.err by a logger.(ƒşÂÖ8È²¢»‚/
-l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Àìê8â¢»‚/
 Z	java:S106"9Replace this use of System.out or System.err by a logger.(Ê˜Éóûÿÿÿÿ8â¢»‚/
-o
-java:S1192"SDefine a constant instead of duplicating this literal "test_blocked_admin" 6 times.(éŒa8çò¼»‚/
+l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊÒi8ÙÉ¡»‚/
 m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘İĞ8â¢»‚/
 Z	java:S106"9Replace this use of System.out or System.err by a logger.(àß¹Ğıÿÿÿÿ8‡’´‚/
-l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊÒi8ÙÉ¡»‚/
+o
+java:S1192"SDefine a constant instead of duplicating this literal "test_blocked_admin" 6 times.(éŒa8çò¼»‚/
 r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎØ•®ûÿÿÿÿ8êÍ´‚/
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(ß¨ôåùÿÿÿÿ8Åãüº‚/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(ƒşÂÖ8È²¢»‚/
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³®¢€8êÍ´‚/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(»àß­8â¢»‚/
+l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Àìê8â¢»‚/
