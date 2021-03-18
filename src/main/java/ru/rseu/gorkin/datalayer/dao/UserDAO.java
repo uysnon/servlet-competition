@@ -16,4 +16,6 @@ public interface UserDAO {
 	User get(int id);
 	User get(String login);
 	AuthenticationResults authenticate(String login, String password);
+	boolean isLoginExist(String login);
+	void createUser(String login, String password, String name, Roles role);
 }

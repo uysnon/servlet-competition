@@ -65,6 +65,25 @@ public class OracleQueriesUtils {
         preparedStatement.executeUpdate();
     }
 
+    public int calculateCountUsersWithLogin(Connection connection, String login) throws SQLException {
+        String query = "SELECT COUNT(*) FROM USER_ WHERE LOGIN = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setString(1, login);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        resultSet.next();
+        return resultSet.getInt(1);
+    }
+
+    public void createUser(Connection connection, String login, String password, String name, Roles role) throws SQLException {
+        String query = "INSERT INTO USER_ (LOGIN, PASSWORD, NAME, ROLE_ID, STATUS_ID) VALUES (?, ?, ?, ?, 1)";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setString(1, login);
+        preparedStatement.setString(2, password);
+        preparedStatement.setString(3, name);
+        preparedStatement.setInt(4, role.getId());
+        preparedStatement.execute();
+    }
+
 
     private Function<ResultSet, User> getUserMapFunction() {
         return (resultSet) -> {

@@ -1,5 +1,12 @@
 package ru.rseu.gorkin.web.commands;
 
+import ru.rseu.gorkin.web.commands.admin.*;
+import ru.rseu.gorkin.web.commands.expert.ShowWorksToCheckCommand;
+import ru.rseu.gorkin.web.commands.guest.*;
+import ru.rseu.gorkin.web.commands.loggedin.DeleteCommand;
+import ru.rseu.gorkin.web.commands.loggedin.LogoutCommand;
+import ru.rseu.gorkin.web.commands.loggedin.ShowAllCompetitionsCommand;
+
 public enum CommandEnum {
     WELCOME(new WelcomeCommand()),
     SHOW_LOGIN_PAGE(new ShowLoginPageCommand()),
@@ -11,7 +18,11 @@ public enum CommandEnum {
     BLOCK(new BlockCommand()),
     UNBLOCK(new UnblockCommand()),
     SHOW_ERROR_PAGE(new ShowErrorPageCommand()),
-    DELETE(new DeleteCommand());
+    DELETE(new DeleteCommand()),
+    SHOW_REGISTRATION_PAGE(new ShowRegistrationPageCommand()),
+    REGISTER(new RegisterCommand()),
+    SHOW_CREATE_ACCOUNT_PAGE(new ShowCreateAccountPageCommand()),
+    CREATE_ACCOUNT(new CreateAccountCommand());
 
     private Command command;
 

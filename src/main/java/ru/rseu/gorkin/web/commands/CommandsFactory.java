@@ -1,5 +1,7 @@
 package ru.rseu.gorkin.web.commands;
 
+import ru.rseu.gorkin.web.commands.guest.WelcomeCommand;
+
 import javax.servlet.http.HttpServletRequest;
 
 public class CommandsFactory {

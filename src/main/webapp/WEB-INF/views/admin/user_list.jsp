@@ -9,204 +9,195 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <style type="text/css">
     <%@include file="/resources/all_pages.css" %>
+    <%@include file="/lib/bootstrap/css/bootstrap.min.css" %>
     <%@include file="/resources/users_list_page.css" %>
 </style>
 <html>
 <head>
 </head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <body>
-<div class="user-account-element">
-    <c:out value="${sessionScope.role}"/>
-    <br/>
-    <c:out value="${sessionScope.login}"/>
-    <br/>
-    <a href="/?command=logout">logout</a>
-</div>
+<div class="container container-main containter-top">
+    <div class="row">
+        <div class="col-9">
+            <div>
+                <a href="?command=show_create_account_page">
+                    <button type="button" class="btn  btn-light block-center">Создать учетную запись</button>
+                </a>
 
-<h1>Users list [admin]</h1>
-<h2>Участники</h2>
-<div class="user-list">
-    <c:forEach items="${participant_users}" var="user">
-        <c:choose>
-            <c:when test="${user.status == 'ACTIVE'}">
-                <div class="user active">
-                    <div class="user-info">
-                        <span>Логин: ${user.login}</span>
-                        <br/>
-                        <span>Имя: ${user.name}</span>
-                        <br/>
-                        <span>Статус: ${user.status.description}</span>
-                        <br/>
-                    </div>
+                <a href="?command=show_create_account_page">
+                    <button type="button" class="btn  btn-light block-center">Создать конкурс</button>
+                </a>
+                <a href="?command=show_create_account_page">
+                    <button type="button" class="btn  btn-light block-center">Список учетных записей
+                    </button>
+                </a>
 
-                    <div class="user-actions">
-                        <a href="/?command=block&user_login=${user.login}&previousPage=show_user_list">Заблокировать</a>
-                        <br/>
-                        <a href="/?command=delete&user_login=${user.login}&previousPage=show_user_list">Удалить</a>
-                    </div>
-                </div>
-            </c:when>
+                <a href="?command=show_create_account_page">
+                    <button type="button" class="btn  btn-light block-center">Список конкурсов
+                    </button>
+                </a>
 
-            <c:when test="${user.status == 'BLOCKED'}">
-                <div class="user blocked">
-                    <div class="user-info">
-                        <span>Логин: ${user.login}</span>
-                        <br/>
-                        <span>Имя: ${user.name}</span>
-                        <br/>
-                        <span>Статус: ${user.status.description}</span>
-                        <br/>
-                    </div>
-                    <div class="user-actions">
-                        <a href="/?command=unblock&user_login=${user.login}&previousPage=show_user_list">Разблокировать</a>
-                        <br/>
-                        <a href="/?command=delete&user_login=${user.login}&previousPage=show_user_list">Удалить</a>
-                    </div>
-                </div>
-            </c:when>
+            </div>
+        </div>
 
-            <c:when test="${user.status == 'DELETED'}">
-                <div class="user deleted">
-                    <div class="user-info">
-                        <span>Логин: ${user.login}</span>
-                        <br/>
-                        <span>Имя: ${user.name}</span>
-                        <br/>
-                        <span>Статус: ${user.status.description}</span>
-                        <br/>
-                    </div>
-                </div>
-            </c:when>
+        <div class="col-3 user-account-element">
+
+            <b></span></spn><c:out value="${sessionScope.role}"/></b>
+            <br/>
+            <c:out value="${sessionScope.login}"/>
+            <br/>
+            <a href="/?command=logout">
+                <button type="button" class="btn  btn-dark block-center">logout
+                </button>
+            </a>
+        </div>
+
+    </div>
 
 
-            <c:otherwise>
-                no status
-            </c:otherwise>
-        </c:choose>
+    <h1>Список учетных записей</h1>
+    <h2>Участники</h2>
+    <div class="user-list">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Login</th>
+                <th scope="col">Name</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${participant_users}" var="user">
+                <tr>
+                    <th scope="row">${user.login}</th>
+                    <td>${user.name}</td>
+                    <td>${user.status.description}</td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${user.status == 'ACTIVE'}">
+                                <a href="/?command=block&user_login=${user.login}&previousPage=show_user_list">
+                                    <button type="button" class="btn btn-warning">Заблокировать</button>
+                                </a>
+                                <a href="/?command=delete&user_login=${user.login}&previousPage=show_user_list">
+                                    <button type="button" class="btn btn-danger">Удалить</button>
+                                </a>
 
-    </c:forEach>
-</div>
+                            </c:when>
 
-<h2>Эксперты</h2>
-<div class="user-list">
-    <c:forEach items="${expert_users}" var="user">
-        <c:choose>
-            <c:when test="${user.status == 'ACTIVE'}">
-                <div class="user active">
-                    <div class="user-info">
-                        <span>Логин: ${user.login}</span>
-                        <br/>
-                        <span>Имя: ${user.name}</span>
-                        <br/>
-                        <span>Статус: ${user.status.description}</span>
-                        <br/>
-                    </div>
+                            <c:when test="${user.status == 'BLOCKED'}">
 
-                    <div class="user-actions">
-                        <a href="/?command=block&user_login=${user.login}&previousPage=show_user_list">Заблокировать</a>
-                        <br/>
-                        <a href="/?command=delete&user_login=${user.login}&previousPage=show_user_list">Удалить</a>
-                    </div>
-                </div>
-            </c:when>
+                                <a href="/?command=unblock&user_login=${user.login}&previousPage=show_user_list">
+                                    <button type="button" class="btn btn-success">Разблокировать
+                                    </button>
+                                </a>
 
-            <c:when test="${user.status == 'BLOCKED'}">
-                <div class="user blocked">
-                    <div class="user-info">
-                        <span>Логин: ${user.login}</span>
-                        <br/>
-                        <span>Имя: ${user.name}</span>
-                        <br/>
-                        <span>Статус: ${user.status.description}</span>
-                        <br/>
-                    </div>
-                    <div class="user-actions">
-                        <a href="/?command=unblock&user_login=${user.login}&previousPage=show_user_list">Разблокировать</a>
-                        <br/>
-                        <a href="/?command=delete&user_login=${user.login}&previousPage=show_user_list">Удалить</a>
-                    </div>
-                </div>
-            </c:when>
+                                <a href="/?command=delete&user_login=${user.login}&previousPage=show_user_list">
+                                    <button type="button" class="btn btn-danger">Удалить</button>
+                                </a>
 
-            <c:when test="${user.status == 'DELETED'}">
-                <div class="user deleted">
-                    <div class="user-info">
-                        <span>Логин: ${user.login}</span>
-                        <br/>
-                        <span>Имя: ${user.name}</span>
-                        <br/>
-                        <span>Статус: ${user.status.description}</span>
-                        <br/>
-                    </div>
-                </div>
-            </c:when>
+                            </c:when>
+                            <c:otherwise>
+                                -
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
 
+    <h2>Эксперты</h2>
+    <div class="user-list">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Login</th>
+                <th scope="col">Name</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${expert_users}" var="user">
+                <tr>
+                    <th scope="row">${user.login}</th>
+                    <td>${user.name}</td>
+                    <td>${user.status.description}</td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${user.status == 'ACTIVE'}">
+                                <a href="/?command=block&user_login=${user.login}&previousPage=show_user_list">
+                                    <button type="button" class="btn btn-warning">Заблокировать</button>
+                                </a>
+                                <a href="/?command=delete&user_login=${user.login}&previousPage=show_user_list">
+                                    <button type="button" class="btn btn-danger">Удалить</button>
+                                </a>
 
-            <c:otherwise>
-                no status
-            </c:otherwise>
-        </c:choose>
+                            </c:when>
 
-    </c:forEach>
-</div>
+                            <c:when test="${user.status == 'BLOCKED'}">
 
-<h2>Администраторы</h2>
-<div class="user-list">
-    <c:forEach items="${admin_users}" var="user">
-        <c:choose>
-            <c:when test="${user.status == 'ACTIVE'}">
-                <div class="user active">
-                    <div class="user-info">
-                        <span>Логин: ${user.login}</span>
-                        <br/>
-                        <span>Имя: ${user.name}</span>
-                        <br/>
-                        <span>Статус: ${user.status.description}</span>
-                        <br/>
-                    </div>
+                                <a href="/?command=unblock&user_login=${user.login}&previousPage=show_user_list">
+                                    <button type="button" class="btn btn-success">Разблокировать
+                                    </button>
+                                </a>
 
-                    <div class="user-actions">
-                        <c:if test="${user.login eq sessionScope.login}">
-                            <a href="/?command=delete&user_login=${user.login}&previousPage=show_user_list">Удалить</a>
-                        </c:if>
-                    </div>
-                </div>
-            </c:when>
+                                <a href="/?command=delete&user_login=${user.login}&previousPage=show_user_list">
+                                    <button type="button" class="btn btn-danger">Удалить</button>
+                                </a>
 
-            <c:when test="${user.status == 'BLOCKED'}">
-                <div class="user blocked">
-                    <div class="user-info">
-                        <span>Логин: ${user.login}</span>
-                        <br/>
-                        <span>Имя: ${user.name}</span>
-                        <br/>
-                        <span>Статус: ${user.status.description}</span>
-                        <br/>
-                    </div>
-                </div>
-            </c:when>
+                            </c:when>
+                            <c:otherwise>
+                                -
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
 
-            <c:when test="${user.status == 'DELETED'}">
-                <div class="user deleted">
-                    <div class="user-info">
-                        <span>Логин: ${user.login}</span>
-                        <br/>
-                        <span>Имя: ${user.name}</span>
-                        <br/>
-                        <span>Статус: ${user.status.description}</span>
-                        <br/>
-                    </div>
-                </div>
-            </c:when>
+    <h2>Администраторы</h2>
+    <div class="user-list">
 
-
-            <c:otherwise>
-                no status
-            </c:otherwise>
-        </c:choose>
-
-    </c:forEach>
-</div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Login</th>
+                <th scope="col">Name</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${admin_users}" var="user">
+                <tr>
+                    <th scope="row">${user.login}</th>
+                    <td>${user.name}</td>
+                    <td>${user.status.description}</td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${user.status == 'ACTIVE'}">
+                                <c:if test="${user.login eq sessionScope.login}">
+                                    <a href="/?command=delete&user_login=${user.login}&previousPage=show_user_list">
+                                        <button type="button" class="btn btn-danger">Удалить</button>
+                                    </a>
+                                </c:if>
+                            </c:when>
+                            <c:otherwise>
+                                -
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
 
 </body>
 </html>

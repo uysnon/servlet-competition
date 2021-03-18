@@ -116,4 +116,24 @@ public class OracleUserDAO implements UserDAO {
         }
     }
 
+    @Override
+    public boolean isLoginExist(String login) {
+        boolean result = false;
+        try {
+            result = (oracleQueriesUtils.calculateCountUsersWithLogin(connection, login) >= 1);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return result;
+    }
+
+    @Override
+    public void createUser(String login, String password, String name, Roles role) {
+        try {
+            oracleQueriesUtils.createUser(connection, login, password, name, role);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
 }
