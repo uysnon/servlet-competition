@@ -8,11 +8,13 @@ import java.util.List;
 import java.util.Map;
 
 public interface CompetitionDAO {
-    void add(String task, CompetitionResultable competitionResultable, Instant endRegistrationDate, Instant endSendingAnswerDate);
+    void add(String task, CompetitionResultable competitionResultable, Instant endRegistrationDate, Instant endSendingAnswerDate, List<Integer> expertIds);
 
     List<Competition> getAll();
     List<Competition> getActive();
     List<Competition> getArchived();
+
+    Competition getById(int id);
 
     List<Competition> getResolved(String userLogin);
     List<Competition> getParticipateIn(String participantLogin);

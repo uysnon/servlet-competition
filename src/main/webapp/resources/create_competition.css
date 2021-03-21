@@ -1,0 +1,42 @@
+.error{
+    color: red;
+}
+
+.registration-form{
+    width: 60%;
+    margin: auto;
+}
+
+* {box-sizing: border-box}
+
+/* Add padding to containers */
+.container-my {
+    padding: 16px;
+}
+
+
+/* Set a style for the submit/register button */
+.registerbtn {
+    width: 100%;
+}
+
+.myButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+/* Add a blue text color to links */
+a {
+    color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+    background-color: #f1f1f1;
+    text-align: center;
+}

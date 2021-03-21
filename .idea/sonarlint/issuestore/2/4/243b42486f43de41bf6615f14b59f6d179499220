@@ -1,29 +1,49 @@
 
+L
+java:S3740"/Provide the parametrized type for this generic.(‚±Ñ8÷³‚/
 N
-java:S1612#",Replace this lambda with a method reference.(ÒáÃ‘øÿÿÿÿ8½˜´‚/
-Y
-java:S1611Y"7Remove the parentheses around the "resultSet" parameter(©†î¯úÿÿÿÿ8 €š´‚/
+java:S1612",Replace this lambda with a method reference.(ÒáÃ‘øÿÿÿÿ8½˜´‚/
+q
+java:S20954"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ8Ä£Ã´‚/
+q
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ8®ô†½ƒ/
+q
+java:S2095]"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ8…Ô‹ù„/
+N
+java:S1612!",Replace this lambda with a method reference.(ÒáÃ‘øÿÿÿÿ8íş³‚/
+g	java:S112*"FDefine and throw a dedicated exception instead of using a generic one.(Œª±ùÿÿÿÿÿ8ö©¸Ú‚/
+q
+java:S2095<"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ8’¨’»‚/
+q
+java:S2095D"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ8¬‘©Ú‚/
+i
+java:S2095w"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(›¬¶¤ûÿÿÿÿ8È²Ä’…/
+q
+java:S2095d"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ8šÿÔù„/
+L
+java:S3740"/Provide the parametrized type for this generic.(ğ§ Ò8¬Úö³‚/
+q
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ8Ø³Ú‚/
+q
+java:S2095,"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ8ò¨É´‚/
+q
+java:S2095l"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ8Šş÷…/
+q
+java:S2095M"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ8ü¤ù¼ƒ/
 d
-java:S2095H"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ò¡¥¹8ü¤ù¼ƒ/
-q
-java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ8Ä£Ã´‚/
-L
-java:S3740"/Provide the parametrized type for this generic.(ğ§ Ò8¬Úö³‚/
-q
-java:S2095."OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ8¬‘©Ú‚/
-q
-java:S2095O"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ8®ô†½ƒ/
-g	java:S112,"FDefine and throw a dedicated exception instead of using a generic one.(Œª±ùÿÿÿÿÿ8ö©¸Ú‚/
-g	java:S1124"FDefine and throw a dedicated exception instead of using a generic one.(³ë®µüÿÿÿÿ8Ø³Ú‚/
-q
-java:S2095>"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ8’¨’»‚/
-q
-java:S2095F"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ8ü¤ù¼ƒ/
-q
-java:S2095 "OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ8ò¨É´‚/
-q
-java:S20956"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ8Ø³Ú‚/
-L
-java:S3740"/Provide the parametrized type for this generic.(‚±Ñ8÷³‚/
-N
-java:S1612",Replace this lambda with a method reference.(ÒáÃ‘øÿÿÿÿ8íş³‚/
+java:S2095F"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ò¡¥¹8ü¤ù¼ƒ/
+g	java:S1122"FDefine and throw a dedicated exception instead of using a generic one.(³ë®µüÿÿÿÿ8Ø³Ú‚/
+i
+java:S2095v"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8¯®Á’…/
+I
+java:S1612_",Replace this lambda with a method reference.(”´Ò8²Õ‘ù„/
+
+java:S1488W"dImmediately return this expression instead of assigning it to the temporary variable "competitions".(¥ù¬¤8Øñ÷÷„/
+r
+java:S1128"PRemove this unused import 'ru.rseu.gorkin.resources.utils.ConfigurationManager'.(¶ë¨üøÿÿÿÿ8ıÍô…/
+r
+java:S2095€"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(â…ÍÆÿÿÿÿÿ8¿Æ’…/
+Z
+java:S1611Œ"7Remove the parentheses around the "resultSet" parameter(©†î¯úÿÿÿÿ8¿Æ’…/
+Z
+java:S1611¢"7Remove the parentheses around the "resultSet" parameter(©†î¯úÿÿÿÿ8¿Æ’…/

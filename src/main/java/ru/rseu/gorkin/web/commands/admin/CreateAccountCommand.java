@@ -7,6 +7,7 @@ import ru.rseu.gorkin.web.commands.Command;
 import ru.rseu.gorkin.web.commands.guest.ShowLoginPageCommand;
 import ru.rseu.gorkin.web.commands.guest.ShowRegistrationPageCommand;
 import ru.rseu.gorkin.web.validators.ValidationResultable;
+import ru.rseu.gorkin.web.validators.ValidationUtils;
 import ru.rseu.gorkin.web.validators.Validator;
 import ru.rseu.gorkin.web.validators.user.login.LoginValidator;
 import ru.rseu.gorkin.web.validators.user.password.Pair;
@@ -59,7 +60,7 @@ public class CreateAccountCommand implements Command {
         ValidationResultable passwordValidationResult = passwordValidator.validate(password);
         ValidationResultable repeatPasswordValidationResult = repeatPasswordValidator.validate(new Pair<>(password, passwordRepeat));
 
-        if (validate(Stream.of(loginValidationResult, passwordValidationResult, repeatPasswordValidationResult).collect(Collectors.toList()))) {
+        if (ValidationUtils.validate(Stream.of(loginValidationResult, passwordValidationResult, repeatPasswordValidationResult).collect(Collectors.toList()))) {
             daoFactory.getUserDAO().createUser(login, password, name, role);
             request.setAttribute(ATTRIBUTE_NAME_SUCCESS_REGISTRATION, "Регистрация прошла успешно!");
             new ShowUserListCommand().execute(request, response);
@@ -77,15 +78,6 @@ public class CreateAccountCommand implements Command {
             new ShowCreateAccountPageCommand().execute(request, response);
         }
 
-    }
-
-    private boolean validate(List<ValidationResultable> validationResults) {
-        for (ValidationResultable validationResult : validationResults) {
-            if (!validationResult.getValidationClass().isNormal()) {
-                return false;
-            }
-        }
-        return true;
     }
 
 }

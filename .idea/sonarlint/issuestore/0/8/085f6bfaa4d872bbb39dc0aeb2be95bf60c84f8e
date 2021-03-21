@@ -1,5 +1,5 @@
 
-{
-java:S1488"^Immediately return this expression instead of assigning it to the temporary variable "result".(Τ–8κΊΒ€/
 \
 java:S1610":Convert the abstract class "DAOFactory" into an interface.(ƒ³¶ιώÿÿÿÿ8κΊΒ€/
+{
+java:S1488"^Immediately return this expression instead of assigning it to the temporary variable "result".(Τ–8κΊΒ€/

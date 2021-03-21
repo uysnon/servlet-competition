@@ -22,6 +22,25 @@
     margin-top: 30px;
 }
 
+.top-bar{
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.form-group{
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.error{
+    color: red;
+}
+
+.success{
+    color: green;
+}
+
 /*.text-center{*/
 /*    text-align: center;*/
 /*}*/

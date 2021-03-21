@@ -1,0 +1,14 @@
+
+cWeb:DoctypePresenceCheck
+":Insert a <!DOCTYPE> declaration to before this <html> tag.(œ÷Ãûÿÿÿÿ
+MWeb:BoldAndItalicTagsCheck("!Replace this <b> tag by <strong>.(ğâê8ÈÀíù„/
+NWeb:BoldAndItalicTagsCheck "!Replace this <b> tag by <strong>.(¥ÕƒÇ8°“±ø„/
+SWeb:BoldAndItalicTagsCheck""!Replace this <b> tag by <strong>.(ŒØ»ªşÿÿÿÿ8»À¿†…/
+NWeb:BoldAndItalicTagsCheck"!Replace this <b> tag by <strong>.(–ÁÉá8š¬ø„/
+NWeb:BoldAndItalicTagsCheck!"!Replace this <b> tag by <strong>.(Âé˜Ï8°“±ø„/
+MWeb:BoldAndItalicTagsCheck"!Replace this <b> tag by <strong>.(à¿Ó'8š¬ø„/
+Z	Web:S5254
+"@Add "lang" and/or "xml:lang" attributes to this "<html>" element(œ÷Ãûÿÿÿÿ
+NWeb:BoldAndItalicTagsCheck"!Replace this <b> tag by <strong>.(¥ÕƒÇ8š¬ø„/
+SWeb:BoldAndItalicTagsCheck"!Replace this <b> tag by <strong>.(·¬â‰üÿÿÿÿ8ºÒ—ú„/
+SWeb:BoldAndItalicTagsCheck"!Replace this <b> tag by <strong>.(Íïøÿÿÿÿÿ8ø¢ªø„/

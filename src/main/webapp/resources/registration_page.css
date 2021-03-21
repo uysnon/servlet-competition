@@ -3,14 +3,14 @@
 }
 
 .registration-form{
-    width: 40%;
+    width: 60%;
     margin: auto;
 }
 
 * {box-sizing: border-box}
 
 /* Add padding to containers */
-.container {
+.container-my {
     padding: 16px;
 }
 
@@ -24,15 +24,19 @@ input[type=text], input[type=password] {
     background: #f1f1f1;
 }
 
-input[type=text]:focus, input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-}
+/*input[type=text]:focus, input[type=password]:focus {*/
+/*    background-color: #ddd;*/
+/*    outline: none;*/
+/*}*/
 
 /* Overwrite default styles of hr */
 hr {
     border: 1px solid #f1f1f1;
     margin-bottom: 25px;
+}
+
+.top-container{
+    padding-top: 70px;
 }
 
 /* Set a style for the submit/register button */

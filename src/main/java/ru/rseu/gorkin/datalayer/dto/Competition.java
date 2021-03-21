@@ -1,6 +1,7 @@
 package ru.rseu.gorkin.datalayer.dto;
 
-import java.util.Date;
+import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -8,15 +9,16 @@ public class Competition {
     private int id;
     private CompetitionResultable evaluationStrategy;
     private String task;
-    private Date endRegistrationDate;
-    private Date endSendingAnswerDate;
+    private Instant endRegistrationDate;
+    private Instant endSendingAnswerDate;
     private List<User> experts;
 
     public Competition() {
+        experts = new ArrayList<>();
     }
 
 
-    public Competition(int id, CompetitionResultable evaluationStrategy, String task, Date endRegistrationDate, Date endSendingAnswerDate, List<User> experts) {
+    public Competition(int id, CompetitionResultable evaluationStrategy, String task, Instant endRegistrationDate, Instant endSendingAnswerDate, List<User> experts) {
         this.id = id;
         this.evaluationStrategy = evaluationStrategy;
         this.task = task;
@@ -49,19 +51,19 @@ public class Competition {
         this.task = task;
     }
 
-    public Date getEndRegistrationDate() {
+    public Instant getEndRegistrationDate() {
         return endRegistrationDate;
     }
 
-    public void setEndRegistrationDate(Date endRegistrationDate) {
+    public void setEndRegistrationDate(Instant endRegistrationDate) {
         this.endRegistrationDate = endRegistrationDate;
     }
 
-    public Date getEndSendingAnswerDate() {
+    public Instant getEndSendingAnswerDate() {
         return endSendingAnswerDate;
     }
 
-    public void setEndSendingAnswerDate(Date endSendingAnswerDate) {
+    public void setEndSendingAnswerDate(Instant endSendingAnswerDate) {
         this.endSendingAnswerDate = endSendingAnswerDate;
     }
 

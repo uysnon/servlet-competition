@@ -10,6 +10,8 @@
 <style type="text/css">
     <%@include file="/resources/all_pages.css" %>
     <%@include file="/resources/login_page.css" %>
+<%--    <%@include file="/lib/bootstrap/css/bootstrap.min.css" %>--%>
+
 </style>
 <html>
 <head>

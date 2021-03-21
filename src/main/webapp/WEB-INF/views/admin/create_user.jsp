@@ -14,59 +14,68 @@
 </style>
 <html>
 <head>
+    <title>Список конкурсов</title>
 </head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <body>
-<form class="registration-form" method="post" action="/">
-    <input type="hidden" name="command" value="create_account"/>
-    <div class="container">
-        <h1>Создание учетной записи</h1>
-        <p>Пожалуйста, заполните поля ниже, чтобы создать аккаунт</p>
-        <hr>
+<div class="container container-main containter-top">
+    <jsp:include page="../logged/top-bar.jsp"></jsp:include>
+    <div class="row">
+        <div class="col-12">
 
-        <b>Роль</b>
-        <select name="role" class="form-select" aria-label="Выберите роль учетной записи">
-            <option value="participant">Участник</option>
-            <option value="expert">Эксперт</option>
-            <option value="administrator">Администратор</option>
-        </select>
-        <br>
+            <form class="registration-form" method="post" action="/">
+                <input type="hidden" name="command" value="create_account"/>
+                <div class="container-my">
+                    <h1>Создание учетной записи</h1>
+                    <p>Пожалуйста, заполните поля ниже, чтобы создать аккаунт</p>
+                    <hr>
 
-        <label for="login">
-            <b>Логин</b>
-            <c:if test="${!login_validation.validationClass.isNormal()}"><br><span
-                    class="error">${login_validation.description}</span></c:if>
-        </label>
-        <input type="text" placeholder="Введите логин" name="login" id="login" value="${login}" required>
+                    <b>Роль</b>
+                    <select name="role" class="form-select" aria-label="Выберите роль учетной записи">
+                        <option value="participant">Участник</option>
+                        <option value="expert">Эксперт</option>
+                        <option value="administrator">Администратор</option>
+                    </select>
+                    <br>
 
-
-        <label for="name">
-            <b>Имя</b>
-
-        </label>
-        <input type="text" placeholder="Введите имя" name="name" id="name" value="${name}" required>
+                    <label for="login">
+                        <b>Логин</b>
+                        <c:if test="${!login_validation.validationClass.isNormal()}"><br><span
+                                class="error">${login_validation.description}</span></c:if>
+                    </label>
+                    <input type="text" placeholder="Введите логин" name="login" id="login" value="${login}" required>
 
 
-        <label for="password">
-            <b>Пароль</b>
-            <c:if test="${!password_validation.validationClass.isNormal()}"><br><span
-                    class="error">${password_validation.description}</span></c:if>
-        </label>
-        <input type="password" placeholder="Введите пароль" name="password" id="password" value="${password}"
-               required>
+                    <label for="name">
+                        <b>Имя</b>
 
-        <label for="password_repeat">
-            <b>Повторите пароль</b>
-            <c:if test="${!password_repeat_validation.validationClass.isNormal()}"><br><span
-                    class="error">${password_repeat_validation.description}</span></c:if>
-        </label>
-        <input type="password" placeholder="Повторите пароль" name="password_repeat" id="password_repeat"
-               value="${password_repeat}" required>
-        <hr>
+                    </label>
+                    <input type="text" placeholder="Введите имя" name="name" id="name" value="${name}" required>
 
-        <button type="submit" class="registerbtn myButton">Зарегистрироваться</button>
+
+                    <label for="password">
+                        <b>Пароль</b>
+                        <c:if test="${!password_validation.validationClass.isNormal()}"><br><span
+                                class="error">${password_validation.description}</span></c:if>
+                    </label>
+                    <input type="password" placeholder="Введите пароль" name="password" id="password"
+                           value="${password}"
+                           required>
+
+                    <label for="password_repeat">
+                        <b>Повторите пароль</b>
+                        <c:if test="${!password_repeat_validation.validationClass.isNormal()}"><br><span
+                                class="error">${password_repeat_validation.description}</span></c:if>
+                    </label>
+                    <input type="password" placeholder="Повторите пароль" name="password_repeat" id="password_repeat"
+                           value="${password_repeat}" required>
+                    <hr>
+
+                    <button type="submit" class="registerbtn myButton">Создать</button>
+                </div>
+            </form>
+        </div>
     </div>
-</form>
-
+</div>
 </body>
 </html>
