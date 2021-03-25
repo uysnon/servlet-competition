@@ -5,7 +5,6 @@ import ru.rseu.gorkin.datalayer.dto.Competition;
 import ru.rseu.gorkin.resources.utils.ConfigurationManagers;
 import ru.rseu.gorkin.web.FrontController;
 import ru.rseu.gorkin.web.commands.Command;
-import ru.rseu.gorkin.web.utils.DateTimeUtils;
 import ru.rseu.gorkin.web.viewclasses.CompetitionView;
 
 import javax.servlet.ServletException;
@@ -30,7 +29,7 @@ public class ShowAllCompetitionsCommand implements Command {
 
         List<Competition> competitions = daoFactory.getCompetitionDAO().getAll();
         competitions.sort(Comparator.comparing(Competition::getEndRegistrationDate).reversed());
-        List<CompetitionView> competitionViews = competitions.stream().map(CompetitionView::createOf).collect(Collectors.toList());
+        List<CompetitionView> competitionViews = competitions.stream().map(CompetitionView::createFrom).collect(Collectors.toList());
         request.setAttribute(COMPETITIONS_ATTRIBUTE, competitionViews);
         request.getRequestDispatcher(ConfigurationManagers.WEB_MANAGER.getProperty("page.allCompetitions")).forward(request,response);
 

@@ -1,11 +1,11 @@
 package ru.rseu.gorkin.datalayer.db.oracle;
 
 import ru.rseu.gorkin.datalayer.dto.*;
-import ru.rseu.gorkin.resources.utils.ConfigurationManager;
 import ru.rseu.gorkin.resources.utils.ConfigurationManagers;
 
 import java.sql.*;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.function.Function;
@@ -92,7 +92,10 @@ public class OracleQueriesUtils {
         String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.competition.select.byId");
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setInt(1, id);
-        return (Competition) selectQueriesManager.selectPrepare(preparedStatement, getCompetitionMapFunction()).stream().findAny().orElseThrow(() -> new IllegalArgumentException());
+        Competition competition = (Competition) selectQueriesManager.selectPrepare(preparedStatement, getCompetitionMapFunction()).stream().findAny().orElseThrow(() -> new IllegalArgumentException());
+        Collection<User> experts = getExperts(connection, id);
+        competition.setExperts(new ArrayList<>(experts));
+        return competition;
     }
 
     public Collection<User> getExperts(Connection connection, int competitionId) throws SQLException {
@@ -114,7 +117,7 @@ public class OracleQueriesUtils {
         preparedStatement.executeUpdate();
 
         int generatedId = -1;
-        String queryFindAddedCompetitionId = ConfigurationManagers.SQL_MANAGER.getProperty("qeury.competition.maxId");
+        String queryFindAddedCompetitionId = ConfigurationManagers.SQL_MANAGER.getProperty("qeury.competition.selectMaxId");
         Statement statement = connection.createStatement();
         ResultSet rs = statement.executeQuery(queryFindAddedCompetitionId);
         if (rs.next()) {
@@ -133,6 +136,85 @@ public class OracleQueriesUtils {
 
         }
         preparedStatement.executeBatch();
+    }
+
+    public void participate(Connection connection, int competitionId, int participantId) throws SQLException {
+        String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.competitionParticipation.add");
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, participantId);
+        preparedStatement.setInt(2, competitionId);
+        preparedStatement.executeUpdate();
+    }
+
+    public Collection<CompetitionParticipation> getCompetitionParticipationByCompetitionId(Connection connection, int competitionId) throws SQLException {
+        String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.competitionParticipation.select.byCompetitionId");
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, competitionId);
+        return selectQueriesManager.selectPrepare(preparedStatement, getCompetitionParticipationMapFunction(connection));
+    }
+
+    public CompetitionParticipation getCompetitionParticipationById(Connection connection, int id) throws Throwable {
+        String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.competitionParticipation.select.byId");
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, id);
+        return (CompetitionParticipation) selectQueriesManager.selectPrepare(preparedStatement, getCompetitionParticipationMapFunction(connection)).stream().findAny().orElseThrow(() -> new IllegalArgumentException());
+    }
+
+    public Collection<Decision> getDecisionsByCompetitionId(Connection connection, int competitionId) throws SQLException {
+        String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.decision.byCompetitionId");
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, competitionId);
+        return selectQueriesManager.selectPrepare(preparedStatement, getDecisionMapFunction(connection));
+    }
+
+    public int calculateCompetitionParticipationsCount(Connection connection, int competitionId, int userId) throws SQLException {
+        String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.competitionParticipation.select.countByUserAndCompetition");
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, userId);
+        preparedStatement.setInt(2, competitionId);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        resultSet.next();
+        return resultSet.getInt("COUNT");
+    }
+
+    public Collection<CompetitionParticipation> getCompetitionParticipationsNeedToVerify(Connection connection, int expertId) throws SQLException {
+        String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.competitionParticipation.select.needToVerifyByExpertId");
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, expertId);
+        return selectQueriesManager.selectPrepare(preparedStatement, getCompetitionParticipationMapFunction(connection));
+    }
+
+    public void sendAnswer(Connection connection, int competitionParticipationId, String answer) throws SQLException {
+        String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.competitionParticipation.insert.answer");
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setString(1, answer);
+        preparedStatement.setInt(2, competitionParticipationId);
+        preparedStatement.executeUpdate();
+    }
+
+    public void makeDecision(Connection connection, int expertId, int competitionParticipationId, Marks mark, String comment) throws SQLException {
+        String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.competitionParticipation.insert.answer");
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, expertId);
+        preparedStatement.setInt(2, competitionParticipationId);
+        preparedStatement.setInt(3, mark.getId());
+        preparedStatement.setString(4, comment);
+        preparedStatement.executeUpdate();
+    }
+
+    public Collection<Decision> getDecisionsByCompetitionParticipationId(Connection connection, int competitionParticipationId) throws SQLException {
+        String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.decision.select.byCompetitionIdAndParticipantId");
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, competitionParticipationId);
+        return selectQueriesManager.selectPrepare(preparedStatement, getDecisionMapFunction(connection));
+    }
+
+    public CompetitionParticipation getCompetitionParticipationByUserAndCompetitionId(Connection connection, int userId, int competitionId) throws SQLException {
+        String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.competitionParticipation.select.byUserAndCompetition");
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, userId);
+        preparedStatement.setInt(2, competitionId);
+        return (CompetitionParticipation) selectQueriesManager.selectPrepare(preparedStatement, getCompetitionParticipationMapFunction(connection)).stream().findAny().orElse(null);
     }
 
 
@@ -188,5 +270,63 @@ public class OracleQueriesUtils {
         };
     }
 
+    private Function<ResultSet, Decision> getDecisionMapFunction(Connection connection) {
+        return (resultSet) -> {
+            int id = 0;
+            Marks mark = null;
+            User expert = null;
+            CompetitionParticipation competitionParticipation = null;
+            String comment = "";
+            try {
+                id = resultSet.getInt("ID");
+                mark = Marks.getInstance(resultSet.getInt("MARK_ID"));
+                int userId = resultSet.getInt("USER_ID");
+                int competitionParticipationId = resultSet.getInt("COMPETITION_PARTICIPATION_ID");
+                comment = resultSet.getString("COMMENT_");
+                expert = getUser(connection, userId);
+                competitionParticipation = getCompetitionParticipationById(connection, competitionParticipationId);
+            } catch (SQLException throwables) {
+                throw new IllegalArgumentException();
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
+            }
+            Decision decision = new Decision();
+            decision.setId(id);
+            decision.setMark(mark);
+            decision.setExpert(expert);
+            decision.setCompetitionParticipation(competitionParticipation);
+            decision.setComment(comment);
+            return decision;
+        };
+    }
 
+    private Function<ResultSet, CompetitionParticipation> getCompetitionParticipationMapFunction(Connection connection) {
+        return (resultSet) -> {
+            int id = 0;
+            Competition competition = null;
+            User participant = null;
+            Marks mark = null;
+            String answer = "";
+            try {
+                id = resultSet.getInt("ID");
+                mark = Marks.getInstance(resultSet.getInt("MARK_ID"));
+                int userId = resultSet.getInt("USER_ID");
+                int competitionId = resultSet.getInt("COMPETITION_ID");
+                answer = resultSet.getString("ANSWER");
+                participant = getUser(connection, userId);
+                competition = getCompetitionById(connection, competitionId);
+            } catch (SQLException throwables) {
+                throw new IllegalArgumentException();
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
+            }
+            CompetitionParticipation participation = new CompetitionParticipation();
+            participation.setId(id);
+            participation.setAnswer(answer);
+            participation.setMark(mark);
+            participation.setCompetition(competition);
+            participation.setParticipant(participant);
+            return participation;
+        };
+    }
 }

@@ -4,6 +4,8 @@ import ru.rseu.gorkin.datalayer.dao.DAOFactory;
 import ru.rseu.gorkin.datalayer.dto.Roles;
 import ru.rseu.gorkin.web.FrontController;
 import ru.rseu.gorkin.web.commands.Command;
+import ru.rseu.gorkin.web.commands.CommandEnum;
+import ru.rseu.gorkin.web.commands.UrlUtils;
 import ru.rseu.gorkin.web.commands.guest.ShowLoginPageCommand;
 import ru.rseu.gorkin.web.commands.guest.ShowRegistrationPageCommand;
 import ru.rseu.gorkin.web.validators.ValidationResultable;
@@ -63,12 +65,11 @@ public class CreateAccountCommand implements Command {
         if (ValidationUtils.validate(Stream.of(loginValidationResult, passwordValidationResult, repeatPasswordValidationResult).collect(Collectors.toList()))) {
             daoFactory.getUserDAO().createUser(login, password, name, role);
             request.setAttribute(ATTRIBUTE_NAME_SUCCESS_REGISTRATION, "Регистрация прошла успешно!");
-            new ShowUserListCommand().execute(request, response);
+            response.sendRedirect(UrlUtils.getCommandUrl(CommandEnum.SHOW_USER_LIST.name().toLowerCase()));
         } else {
             request.setAttribute(ATTRIBUTE_NAME_LOGIN_VALIDATE_RESULT, loginValidationResult);
             request.setAttribute(ATTRIBUTE_NAME_PASSWORD_VALIDATE_RESULT, passwordValidationResult);
             request.setAttribute(ATTRIBUTE_NAME_PASSWORD_REPEAT_VALIDATE_RESULT, repeatPasswordValidationResult);
-
 
             request.setAttribute(PARAM_NAME_PASSWORD_REPEAT, passwordRepeat);
             request.setAttribute(PARAM_NAME_PASSWORD, password);

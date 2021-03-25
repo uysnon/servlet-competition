@@ -3,6 +3,7 @@ package ru.rseu.gorkin.web.filters;
 
 import ru.rseu.gorkin.datalayer.dto.Roles;
 import ru.rseu.gorkin.resources.utils.ConfigurationManagers;
+import ru.rseu.gorkin.web.commands.CommandEnum;
 import ru.rseu.gorkin.web.commands.UrlUtils;
 
 import javax.servlet.*;
@@ -17,20 +18,49 @@ import java.util.stream.Stream;
 public class UserRightsFilter implements Filter {
     private static final String REQUEST_COMMAND_PARAMETER = "command";
 
-    private static List<String> participantActions;
-    private static List<String> expertActions;
-    private static List<String> adminActions;
-    private static List<String> loggedInUserActions;
-    private static List<String> guestActions;
+    public static List<CommandEnum> participantActions;
+    public static List<CommandEnum> expertActions;
+    public static List<CommandEnum> adminActions;
+    public static List<CommandEnum> loggedInUserActions;
+    public static List<CommandEnum> guestActions;
 
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        loggedInUserActions = Stream.of("logout", "show_all_competitions", "delete").collect(Collectors.toList());
-        participantActions = Stream.of("some_command").collect(Collectors.toList());
-        adminActions = Stream.of("show_user_list", "block", "unblock").collect(Collectors.toList());
-        expertActions = Stream.of("show_works_to_check").collect(Collectors.toList());
-        guestActions = Stream.of("show_login_page").collect(Collectors.toList());
+        loggedInUserActions = Stream.of(
+                CommandEnum.LOGOUT,
+                CommandEnum.SHOW_ALL_COMPETITIONS,
+                CommandEnum.DELETE,
+                CommandEnum.SHOW_COMPETITION,
+                CommandEnum.SHOW_EXPERT_DECISION)
+                .collect(Collectors.toList());
+
+        participantActions = Stream.of(
+                CommandEnum.SHOW_USER_COMPETITIONS,
+                CommandEnum.PARTICIPATE,
+                CommandEnum.SHOW_COMPETITION_PARTICIPATION_ID,
+                CommandEnum.SHOW_COMPETITION_PARTICIPATION_UCID
+        ).collect(Collectors.toList());
+
+        adminActions = Stream.of(
+                CommandEnum.SHOW_USER_LIST,
+                CommandEnum.BLOCK,
+                CommandEnum.CREATE_ACCOUNT,
+                CommandEnum.SHOW_CREATE_ACCOUNT_PAGE,
+                CommandEnum.SHOW_CREATE_COMPETITION_PAGE,
+                CommandEnum.CREATE_COMPETITION,
+                CommandEnum.SHOW_CHANGE_COMPETITION_COMMAND,
+                CommandEnum.CHANGE_COMPETITION_COMMAND)
+                .collect(Collectors.toList());
+
+        expertActions = Stream.of(
+                CommandEnum.SHOW_WORKS_TO_CHECK,
+                CommandEnum.SHOW_WORK_TO_CHECK,
+                CommandEnum.MAKE_DECISION)
+                .collect(Collectors.toList());
+
+        guestActions = Stream.of(CommandEnum.SHOW_LOGIN_PAGE)
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -38,7 +68,7 @@ public class UserRightsFilter implements Filter {
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
         HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
         Object userRoleObject = httpServletRequest.getSession().getAttribute(ConfigurationManagers.WEB_MANAGER.getProperty("session.attribute.role"));
-        List<String> deprecatedActionsList = new ArrayList<>();
+        List<CommandEnum> deprecatedActionsList = new ArrayList<>();
         boolean isUserRightsNormal = true;
         if (userRoleObject == null || (Roles) userRoleObject == Roles.GUEST) {
             deprecatedActionsList.addAll(expertActions);
@@ -80,13 +110,13 @@ public class UserRightsFilter implements Filter {
         }
     }
 
-    private boolean isUserHaveRights(HttpServletRequest request, List<String> deprecatedActions) {
+    private boolean isUserHaveRights(HttpServletRequest request, List<CommandEnum> deprecatedActions) {
         String action = request.getParameter(REQUEST_COMMAND_PARAMETER);
         if (action == null || action.isEmpty()) {
             return true;
         }
-        for (String deprecatedAction : deprecatedActions) {
-            if (action.equalsIgnoreCase(deprecatedAction)) {
+        for (CommandEnum deprecatedAction : deprecatedActions) {
+            if (action.equalsIgnoreCase(deprecatedAction.name())) {
                 return false;
             }
         }

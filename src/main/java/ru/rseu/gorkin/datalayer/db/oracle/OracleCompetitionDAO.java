@@ -52,8 +52,6 @@ public class OracleCompetitionDAO implements CompetitionDAO {
     public Competition getById(int id) {
         try {
             Competition competition = oracleQueriesUtils.getCompetitionById(connection, id);
-            Collection<User> experts = oracleQueriesUtils.getExperts(connection, id);
-            competition.setExperts(new ArrayList<>(experts));
             return competition;
         } catch (Throwable throwable) {
             throwable.printStackTrace();

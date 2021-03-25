@@ -1,6 +1,7 @@
 package ru.rseu.gorkin.web.commands.loggedin;
 
 import ru.rseu.gorkin.web.commands.Command;
+import ru.rseu.gorkin.web.commands.CommandEnum;
 import ru.rseu.gorkin.web.commands.UrlUtils;
 
 import javax.servlet.ServletException;
@@ -12,6 +13,6 @@ public class LogoutCommand implements Command {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getSession().invalidate();
-        response.sendRedirect(UrlUtils.getCommandUrl("show_login_page"));
+        response.sendRedirect(UrlUtils.getCommandUrl(CommandEnum.SHOW_LOGIN_PAGE.name().toLowerCase()));
     }
 }

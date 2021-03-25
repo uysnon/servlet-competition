@@ -1,20 +1,48 @@
 
-I
-java:S1199="-Extract this nested code block into a method.(½˜»j8ü¯ÊÇ‚/
+X
+java:S2696"6Make the enclosing method "static" or remove this set.(Âõ¨€úÿÿÿÿ8ŽîÇ‚/
+U
+java:S1444"3Make this "public static expertActions" field final(­²€ïûÿÿÿÿ8³†µÇ…/
+|
+java:S1104"_Make loggedInUserActions a static final constant or non-public and provide accessors if needed.(ÜÉ»¨8³†µÇ…/
+X
+java:S26968"6Make the enclosing method "static" or remove this set.(ÊÕð‹ÿÿÿÿÿ8³†µÇ…/
 O
-java:S11998"-Extract this nested code block into a method.(˜æØÃúÿÿÿÿ8×åÈÇ‚/
-ž
-java:S1186a"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î8ÈÎÑÇ‚/
-S
-java:S2696 "6Make the enclosing method "static" or remove this set.(†Ã×Ü8ŽîÇ‚/
+java:S1199V"-Extract this nested code block into a method.(˜æØÃúÿÿÿÿ8×åÈÇ‚/
+I
+java:S1199["-Extract this nested code block into a method.(½˜»j8ü¯ÊÇ‚/
 J
-java:S1199B"-Extract this nested code block into a method.(ØÍ¢–8¡‹ÏÇ‚/
-X
-java:S2696"6Make the enclosing method "static" or remove this set.(õ«í™ÿÿÿÿÿ8ŽîÇ‚/
-X
-java:S2696"6Make the enclosing method "static" or remove this set.(¨æŒõúÿÿÿÿ8ŽîÇ‚/
-X
-java:S2696"6Make the enclosing method "static" or remove this set.(•Î÷ÿÿÿÿÿ8ŽîÇ‚/
-t	java:S1317"YComplete cases by adding the missing enum constants or add a default case to this switch.(’¼Ê+8¢›ÈÇ‚/
+java:S1199`"-Extract this nested code block into a method.(ØÍ¢–8¡‹ÏÇ‚/
+z
+java:S1104"XMake guestActions a static final constant or non-public and provide accessors if needed.(ÅÞ¼¿üÿÿÿÿ8³†µÇ…/
+D
+java:S2386-"'Make member "adminActions" "protected".(œêú™8Æ¦ËÆ†/
 S
-java:S2696!"6Make the enclosing method "static" or remove this set.(³ÌÐ¶8ŽîÇ‚/
+java:S2696-"6Make the enclosing method "static" or remove this set.(œêú™8³†µÇ…/
+X
+java:S2696&"6Make the enclosing method "static" or remove this set.(ËŸà±øÿÿÿÿ8³†µÇ…/
+S
+java:S2696>"6Make the enclosing method "static" or remove this set.(¬—…æ8³†µÇ…/
+T
+java:S1444"2Make this "public static guestActions" field final(ÅÞ¼¿üÿÿÿÿ8³†µÇ…/
+J
+java:S23868"(Make member "expertActions" "protected".(ÊÕð‹ÿÿÿÿÿ8ÌûÏ…/
+Z
+java:S1444"8Make this "public static participantActions" field final(áÔ‚Ýÿÿÿÿÿ8³†µÇ…/
+ž
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î8ÈÎÑÇ‚/
+P
+java:S2386".Make member "loggedInUserActions" "protected".(Âõ¨€úÿÿÿÿ8žÿÏ…/
+z
+java:S1104"XMake adminActions a static final constant or non-public and provide accessors if needed.(¹åé·ÿÿÿÿÿ8³†µÇ…/
+€
+java:S1104"^Make participantActions a static final constant or non-public and provide accessors if needed.(áÔ‚Ýÿÿÿÿÿ8³†µÇ…/
+V
+java:S1444"9Make this "public static loggedInUserActions" field final(ÜÉ»¨8³†µÇ…/
+{
+java:S1104"YMake expertActions a static final constant or non-public and provide accessors if needed.(­²€ïûÿÿÿÿ8³†µÇ…/
+D
+java:S2386>"'Make member "guestActions" "protected".(¬—…æ8³†µÇ…/
+T
+java:S1444"2Make this "public static adminActions" field final(¹åé·ÿÿÿÿÿ8³†µÇ…/
+t	java:S131U"YComplete cases by adding the missing enum constants or add a default case to this switch.(’¼Ê+8¢›ÈÇ‚/

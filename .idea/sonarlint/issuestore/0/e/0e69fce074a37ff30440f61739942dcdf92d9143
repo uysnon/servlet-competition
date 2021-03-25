@@ -1,14 +1,16 @@
 
+SWeb:BoldAndItalicTagsCheck>"!Replace this <b> tag by <strong>.(ŒØ»ªşÿÿÿÿ8ÎÌ‹Å†/
+MWeb:BoldAndItalicTagsCheckD"!Replace this <b> tag by <strong>.(ğâê8ÎÌ‹Å†/
+NWeb:BoldAndItalicTagsCheck="!Replace this <b> tag by <strong>.(Âé˜Ï8ÎÌ‹Å†/
+SWeb:BoldAndItalicTagsCheck7"!Replace this <b> tag by <strong>.(Íïøÿÿÿÿÿ8ÎÌ‹Å†/
+TWeb:TableWithoutCaptionCheckL" Add a description to this table.(¼ëùÏşÿÿÿÿ8ÎÌ‹Å†/
+SWeb:BoldAndItalicTagsCheck:"!Replace this <b> tag by <strong>.(·¬â‰üÿÿÿÿ8ÎÌ‹Å†/
+NWeb:BoldAndItalicTagsCheck8"!Replace this <b> tag by <strong>.(–ÁÉá8ÎÌ‹Å†/
+s Web:TableHeaderHasIdOrScopeCheckS";Add either an 'id' or a 'scope' attribute to this <th> tag.(„ûä­ùÿÿÿÿ8ÎÌ‹Å†/
+MWeb:BoldAndItalicTagsCheck9"!Replace this <b> tag by <strong>.(à¿Ó'8ÎÌ‹Å†/
 cWeb:DoctypePresenceCheck
 ":Insert a <!DOCTYPE> declaration to before this <html> tag.(œ÷Ãûÿÿÿÿ
-MWeb:BoldAndItalicTagsCheck("!Replace this <b> tag by <strong>.(ğâê8ÈÀíù„/
-NWeb:BoldAndItalicTagsCheck "!Replace this <b> tag by <strong>.(¥ÕƒÇ8°“±ø„/
-SWeb:BoldAndItalicTagsCheck""!Replace this <b> tag by <strong>.(ŒØ»ªşÿÿÿÿ8»À¿†…/
-NWeb:BoldAndItalicTagsCheck"!Replace this <b> tag by <strong>.(–ÁÉá8š¬ø„/
-NWeb:BoldAndItalicTagsCheck!"!Replace this <b> tag by <strong>.(Âé˜Ï8°“±ø„/
-MWeb:BoldAndItalicTagsCheck"!Replace this <b> tag by <strong>.(à¿Ó'8š¬ø„/
 Z	Web:S5254
 "@Add "lang" and/or "xml:lang" attributes to this "<html>" element(œ÷Ãûÿÿÿÿ
-NWeb:BoldAndItalicTagsCheck"!Replace this <b> tag by <strong>.(¥ÕƒÇ8š¬ø„/
-SWeb:BoldAndItalicTagsCheck"!Replace this <b> tag by <strong>.(·¬â‰üÿÿÿÿ8ºÒ—ú„/
-SWeb:BoldAndItalicTagsCheck"!Replace this <b> tag by <strong>.(Íïøÿÿÿÿÿ8ø¢ªø„/
+NWeb:BoldAndItalicTagsCheck<"!Replace this <b> tag by <strong>.(¥ÕƒÇ8ÎÌ‹Å†/
+NWeb:BoldAndItalicTagsCheck;"!Replace this <b> tag by <strong>.(¥ÕƒÇ8ÎÌ‹Å†/

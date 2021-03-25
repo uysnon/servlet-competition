@@ -19,7 +19,7 @@ public class CompetitionView {
     private CompetitionView() {
     }
 
-    public static CompetitionView createOf(Competition competition){
+    public static CompetitionView createFrom(Competition competition){
         CompetitionView competitionView = new CompetitionView();
         DateTimeUtils dateTimeUtils = new DateTimeUtils();
         competitionView.id = competition.getId();

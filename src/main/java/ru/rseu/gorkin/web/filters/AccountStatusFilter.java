@@ -1,7 +1,6 @@
 package ru.rseu.gorkin.web.filters;
 
 import ru.rseu.gorkin.datalayer.dao.DAOFactory;
-import ru.rseu.gorkin.datalayer.dao.DBType;
 import ru.rseu.gorkin.datalayer.dto.Statuses;
 import ru.rseu.gorkin.datalayer.dto.User;
 import ru.rseu.gorkin.resources.utils.ConfigurationManagers;

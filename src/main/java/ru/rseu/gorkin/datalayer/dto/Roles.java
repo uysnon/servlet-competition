@@ -23,6 +23,18 @@ public enum Roles {
         throw new IllegalArgumentException();
     }
 
+    public boolean isAdministrator(){
+        return this == ADMINISTRATOR;
+    }
+
+    public boolean isParticipant(){
+        return this == PARTICIPANT;
+    }
+
+    public boolean isExpert(){
+        return this == EXPERT;
+    }
+
     public int getId() {
         return id;
     }
