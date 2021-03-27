@@ -23,9 +23,7 @@
     <h1>Участие в конкурсе №${competition_v.id}</h1>
     <c:catch var="exception">
         <c:if test="${! empty message}">
-            <a href="${message.url}">
-                <button type="button" class="btn btn-success">${message.content}</button>
-            </a>
+            <span class="error">${message}</span>
         </c:if>
     </c:catch>
     <h2>Информация о конкурсе</h2>
@@ -35,10 +33,26 @@
         <p><strong>Стратегия оценивания: </strong>${competition_v.evaluationStrategy}</p>
         <br>
         <strong>Ответ пользователя</strong>
+        <c:catch var="exception">
+            <c:if test="${! empty answer_validation}">
+                <span class="error"> ${answer_validation.description}</span>
+            </c:if>
+        </c:catch>
         <form method="post" action="/">
-            <input type="hidden" name="command" value="${competition_participation.id}"/>
-            <textarea class="form-control" id="input_answer" rows="3"></textarea>
-            <c:if test="${empty competition_participation.answer}">
+            <input type="hidden" name="command" value="send_answer"/>
+            <input type="hidden" name="id" value="${competition_participation.id}">
+            <textarea
+                    class="form-control"
+                    name="answer"
+                    id="input_answer"
+                    rows="3"
+                    <c:if test="${not is_answer_editable}">
+                        readonly
+                    </c:if>
+            >
+                ${answer}
+            </textarea>
+            <c:if test="${is_answer_editable}">
                 <button type="submit" class="btn btn-warning btn-dark">
                     Отправить
                 </button>

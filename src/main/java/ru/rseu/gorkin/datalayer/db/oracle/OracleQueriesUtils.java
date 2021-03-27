@@ -1,6 +1,7 @@
 package ru.rseu.gorkin.datalayer.db.oracle;
 
 import ru.rseu.gorkin.datalayer.dto.*;
+import ru.rseu.gorkin.resources.utils.ConfigurationManager;
 import ru.rseu.gorkin.resources.utils.ConfigurationManagers;
 
 import java.sql.*;
@@ -158,6 +159,13 @@ public class OracleQueriesUtils {
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setInt(1, id);
         return (CompetitionParticipation) selectQueriesManager.selectPrepare(preparedStatement, getCompetitionParticipationMapFunction(connection)).stream().findAny().orElseThrow(() -> new IllegalArgumentException());
+    }
+
+    public Collection<CompetitionParticipation> getCompetitionParticipationsByParticipantId(Connection connection, int participantId) throws SQLException {
+        String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.competitionParticipation.select.byParticipantId");
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, participantId);
+        return selectQueriesManager.selectPrepare(preparedStatement, getCompetitionParticipationMapFunction(connection));
     }
 
     public Collection<Decision> getDecisionsByCompetitionId(Connection connection, int competitionId) throws SQLException {

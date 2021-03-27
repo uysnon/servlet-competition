@@ -14,4 +14,5 @@ public interface CompetitionParticipationDAO {
     List<CompetitionParticipation> getVerificationRequiredParticipations(int expertId);
     void makeAnswer(int participationId, String answer);
     List<CompetitionParticipation> getByCompetitionId(int competitionId);
+    List<CompetitionParticipation> getByParticipantId(int participantId);
 }

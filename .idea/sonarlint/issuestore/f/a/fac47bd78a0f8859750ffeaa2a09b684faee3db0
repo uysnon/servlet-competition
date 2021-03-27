@@ -1,11 +1,9 @@
 
-}
-java:S1104"bMake COMPETITIONS_ATTRIBUTE a static final constant or non-public and provide accessors if needed.(´¾ÆÍþÿÿÿÿ
-|
-java:S3008"aRename this field "COMPETITIONS_ATTRIBUTE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´¾ÆÍþÿÿÿÿ
 W
-java:S1444"<Make this "public static COMPETITIONS_ATTRIBUTE" field final(´¾ÆÍþÿÿÿÿ
-_
-java:S1128"CRemove this unused import 'ru.rseu.gorkin.web.utils.DateTimeUtils'.(ÚèÅX8ßöºû„/
+java:S1444"<Make this "public static COMPETITIONS_ATTRIBUTE" field final(´¾ÆÍþÿÿÿÿ
 ž
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ªÀ¥Ä8ßöºû„/
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ªÀ¥Ä8ßöºû„/
+}
+java:S1104"bMake COMPETITIONS_ATTRIBUTE a static final constant or non-public and provide accessors if needed.(´¾ÆÍþÿÿÿÿ
+|
+java:S3008"aRename this field "COMPETITIONS_ATTRIBUTE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´¾ÆÍþÿÿÿÿ

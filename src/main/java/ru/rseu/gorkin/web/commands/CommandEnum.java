@@ -6,10 +6,7 @@ import ru.rseu.gorkin.web.commands.expert.ShowWorkToCheckCommand;
 import ru.rseu.gorkin.web.commands.expert.ShowWorksToCheckCommand;
 import ru.rseu.gorkin.web.commands.guest.*;
 import ru.rseu.gorkin.web.commands.loggedin.*;
-import ru.rseu.gorkin.web.commands.participant.ParticipateCommand;
-import ru.rseu.gorkin.web.commands.participant.ShowCompetitionParticipateByUserAndCompetitionIds;
-import ru.rseu.gorkin.web.commands.participant.ShowCompetitionParticipationById;
-import ru.rseu.gorkin.web.commands.participant.ShowUserCompetitions;
+import ru.rseu.gorkin.web.commands.participant.*;
 
 public enum CommandEnum {
     WELCOME(new WelcomeCommand()),
@@ -38,7 +35,8 @@ public enum CommandEnum {
     SHOW_CHANGE_COMPETITION_COMMAND(new ShowChangeCompetitionCommand(),"Изменить"),
     CHANGE_COMPETITION_COMMAND(new ChangeCompetitionCommand()),
     SHOW_COMPETITION_PARTICIPATION_ID(new ShowCompetitionParticipationById()),
-    SHOW_COMPETITION_PARTICIPATION_UCID(new ShowCompetitionParticipateByUserAndCompetitionIds());
+    SHOW_COMPETITION_PARTICIPATION_UCID(new ShowCompetitionParticipateByUserAndCompetitionIds()),
+    SEND_ANSWER(new SendAnswerCommand());
 
     private Command command;
     private String title;

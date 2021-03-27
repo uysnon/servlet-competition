@@ -1,19 +1,21 @@
 
-£
-java:S1186D"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ΪΈ–ϋÿÿÿÿ8¥ΆΘ†/
 E
-java:S1148M"#Use a logger to log this exception.(Φ·χώÿÿÿÿ8¥ΆΘ†/
-H
-java:S1168;"+Return an empty collection instead of null.(¥Ήο8¥ΆΘ†/
-H
-java:S1168O"+Return an empty collection instead of null.(¥Ήο8¥ΆΘ†/
+java:S1148N"#Use a logger to log this exception.(Φ·χώÿÿÿÿ8φΥ£Χ†/
 E
-java:S1148"#Use a logger to log this exception.(Φ·χώÿÿÿÿ8«ΤΩ†/
-Y
-java:S1128	"7Remove this unused import 'java.sql.PreparedStatement'.(ςΔ™ƒÿÿÿÿÿ8Α†Θ†/
-n
-java:S1128"QRemove this unused import 'ru.rseu.gorkin.resources.utils.ConfigurationManagers'.(„Οτ8Α†Θ†/
-E
-java:S1148*"#Use a logger to log this exception.(Φ·χώÿÿÿÿ8γί›Θ†/
+java:S1148X"#Use a logger to log this exception.(Φ·χώÿÿÿÿ8τ°”Χ†/
 H
-java:S1168@"+Return an empty collection instead of null.(¥Ήο8¥ΆΘ†/
+java:S1168c"+Return an empty collection instead of null.(¥Ήο8¥ΆΘ†/
+E
+java:S1148a"#Use a logger to log this exception.(Φ·χώÿÿÿÿ8¥ΆΘ†/
+E
+java:S1148"#Use a logger to log this exception.(Φ·χώÿÿÿÿ8«ΤΩ†/
+E
+java:S1148l"#Use a logger to log this exception.(Φ·χώÿÿÿÿ8±©ϊ†/
+H
+java:S1168E"+Return an empty collection instead of null.(¥Ήο8¥ΆΘ†/
+E
+java:S1148>"#Use a logger to log this exception.(Φ·χώÿÿÿÿ8ϊΡΧ†/
+E
+java:S1148("#Use a logger to log this exception.(Φ·χώÿÿÿÿ8γί›Θ†/
+@
+java:S11483"#Use a logger to log this exception.(Σωσÿ8πΒ‚‡/

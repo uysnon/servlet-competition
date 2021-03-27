@@ -44,7 +44,13 @@ public class OracleCompetitionParticipationDAO implements CompetitionParticipati
 
     @Override
     public CompetitionParticipation get(int id) {
-        return null;
+        CompetitionParticipation participation = null;
+        try {
+            participation = oracleQueriesUtils.getCompetitionParticipationById(connection, id);
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
+        return participation;
     }
 
     @Override
@@ -77,7 +83,7 @@ public class OracleCompetitionParticipationDAO implements CompetitionParticipati
     @Override
     public void makeAnswer(int participationId, String answer) {
         try {
-            oracleQueriesUtils.sendAnswer(connection,participationId, answer);
+            oracleQueriesUtils.sendAnswer(connection, participationId, answer);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -91,5 +97,16 @@ public class OracleCompetitionParticipationDAO implements CompetitionParticipati
             throwables.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public List<CompetitionParticipation> getByParticipantId(int participantId) {
+        List<CompetitionParticipation> result = null;
+        try {
+            result = new ArrayList<>(oracleQueriesUtils.getCompetitionParticipationsByParticipantId(connection, participantId));
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return result;
     }
 }
