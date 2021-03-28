@@ -33,7 +33,7 @@
 
         <b></span></spn><c:out value="${sessionScope.role}"/></b>
         <br/>
-        <c:out value="${sessionScope.login}"/>
+        <c:out value="${sessionScope.name}"/> @<c:out value="${sessionScope.login}"/>
         <br/>
         <a href="/?command=logout">
             <button type="button" class="btn  btn-dark block-center">logout

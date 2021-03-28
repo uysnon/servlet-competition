@@ -78,7 +78,7 @@
     </div>
 
     <div class="container signin">
-        <p>Уже есть аккаунт? <a href="/?command=login">Войти</a>.</p>
+        <p>Уже есть аккаунт? <a href="/?command=show_login_page">Войти</a></p>
     </div>
 </form>
 

@@ -18,6 +18,7 @@ public class SelectQueriesManager<T> {
                 result.add(mapFunction.apply(resultSet));
             }
             resultSet.close();
+            statement.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

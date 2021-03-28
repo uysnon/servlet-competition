@@ -21,7 +21,7 @@
     <jsp:include page="../logged/top-bar.jsp"></jsp:include>
     <h1>Список учетных записей</h1>
     <br>
-        <h2>Участники</h2>
+    <h2>Участники</h2>
     <div class="user-list">
         <table class="table">
             <thead>
@@ -97,26 +97,21 @@
                     <td>
                         <c:choose>
                             <c:when test="${user.status == 'ACTIVE'}">
-                                <a href="/?command=block&user_login=${user.login}&previousPage=show_user_list">
-                                    <button type="button" class="btn btn-warning">Заблокировать</button>
-                                </a>
-                                <a href="/?command=delete&user_login=${user.login}&previousPage=show_user_list">
-                                    <button type="button" class="btn btn-danger">Удалить</button>
-                                </a>
-
+                                <form class="registration-form" method="post" action="/">
+                                    <input type="hidden" name="user_login" value="${user.login}"/>
+                                    <input type="hidden" name="previousPage" value="show_user_list"/>
+                                    <button type="submit" name="command" value="block" class="btn btn-warning">Заблокировать</button>
+                                    <button type="submit" name="command" value="delete" class="btn btn-danger">Удалить</button>
+                                </form>
                             </c:when>
 
                             <c:when test="${user.status == 'BLOCKED'}">
-
-                                <a href="/?command=unblock&user_login=${user.login}&previousPage=show_user_list">
-                                    <button type="button" class="btn btn-success">Разблокировать
-                                    </button>
-                                </a>
-
-                                <a href="/?command=delete&user_login=${user.login}&previousPage=show_user_list">
-                                    <button type="button" class="btn btn-danger">Удалить</button>
-                                </a>
-
+                                <form class="registration-form" method="post" action="/">
+                                    <input type="hidden" name="user_login" value="${user.login}"/>
+                                    <input type="hidden" name="previousPage" value="show_user_list"/>
+                                    <button type="submit" name="command" value="unblock" class="btn btn-success">Разблокировать</button>
+                                    <button type="submit" name="command" value="delete" class="btn btn-danger">Удалить</button>
+                                </form>
                             </c:when>
                             <c:otherwise>
                                 -
