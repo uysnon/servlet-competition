@@ -33,8 +33,14 @@ public class OracleDecisionDAO implements DecisionDAO {
     }
 
     @Override
-    public List<Decision> getExpertDecisions(String expertLogin) {
-        return null;
+    public List<Decision> getExpertDecisions(int expertId) {
+        List<Decision> decisions = null;
+        try {
+            decisions = new ArrayList<>(oracleQueriesUtils.getDecisionsByExpertId(connection, expertId));
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return decisions;
     }
 
     @Override

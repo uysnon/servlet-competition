@@ -218,3 +218,9 @@ Gsrc/main/webapp/WEB-INF/views/participant/competition_participation.jsp,2\f\2f
 Ssrc/main/java/ru/rseu/gorkin/web/validators/competition/answer/AnswerValidator.java,f\9\f9d44af36ecc07472fb912008fc1be01aa531e13
 |
 Lsrc/main/java/ru/rseu/gorkin/web/commands/participant/SendAnswerCommand.java,2\5\25ae86112d44c1eaa5268206759c7b27a897105e
+
+Osrc/main/java/ru/rseu/gorkin/web/commands/participant/ShowUserCompetitions.java,3\e\3e0c8097f430f0320a3be5d1941836839a6339b1
+z
+Jsrc/main/java/ru/rseu/gorkin/web/viewclasses/CompetitionForExpertView.java,6\9\691e9f675dcff4cfe7ad1f7ac88e4aa3fbd8f246
+
+Osrc/main/java/ru/rseu/gorkin/web/viewclasses/CompetitionForParticipantView.java,3\c\3ce7c7ec2d06819ae332166141f2bc2002b219b2

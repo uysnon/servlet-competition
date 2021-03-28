@@ -1,8 +1,6 @@
 
-u
-java:S1128	"XRemove this unused import 'ru.rseu.gorkin.web.commands.loggedin.ShowCompetitionCommand'.(Ü­£â8ãâØÇ†/
-X
-java:S1068";Remove this unused "ERROR_MESSAGE_ATTRIBUTE" private field.(¹ÏÁ8¢¥•Æ†/
 _
 java:S1068"=Remove this unused "SUCCESS_MESSAGE_ATTRIBUTE" private field.(èøÏØıÿÿÿÿ8®ÙÖĞ…/
-X	java:S125""<This block of commented-out lines of code should be removed.(æÍ›8®ÙÖĞ…/
+X
+java:S1068";Remove this unused "ERROR_MESSAGE_ATTRIBUTE" private field.(¹ÏÁ8¢¥•Æ†/
+X	java:S125%"<This block of commented-out lines of code should be removed.(æÍ›8®ÙÖĞ…/

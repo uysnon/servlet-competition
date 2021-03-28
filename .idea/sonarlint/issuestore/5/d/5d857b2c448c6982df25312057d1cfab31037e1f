@@ -1,6 +1,6 @@
 
-U	java:S106&"9Replace this use of System.out or System.err by a logger.(Œ‚ŸË8ƒ™…¿€/
-t
-java:S3077"WUse a thread-safe type; adding "volatile" is not enough to make this field thread-safe.(ÔùÇ8ƒ™…¿€/
 J
 java:S4925 "-Remove this "Class.forName()", it is useless.(ùíÄé8Ñ‰äÃ‚/
+t
+java:S3077"WUse a thread-safe type; adding "volatile" is not enough to make this field thread-safe.(ÔùÇ8ƒ™…¿€/
+U	java:S106&"9Replace this use of System.out or System.err by a logger.(Œ‚ŸË8ƒ™…¿€/

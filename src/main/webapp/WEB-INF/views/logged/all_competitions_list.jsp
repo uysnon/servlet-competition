@@ -32,7 +32,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${competitions_v}" var="competition"  varStatus="loop">
+                <c:forEach items="${competitions_v}" var="competition" varStatus="loop">
                     <tr style="transform: rotate(0);">
                         <th><a href="/?command=show_competition&id=${competition.id}"
                                class="stretched-link">${competition.id}</a></th>

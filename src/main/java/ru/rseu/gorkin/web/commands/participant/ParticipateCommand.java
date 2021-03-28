@@ -6,7 +6,7 @@ import ru.rseu.gorkin.web.FrontController;
 import ru.rseu.gorkin.web.commands.Command;
 import ru.rseu.gorkin.web.commands.CommandEnum;
 import ru.rseu.gorkin.web.commands.UrlUtils;
-import ru.rseu.gorkin.web.commands.loggedin.ShowCompetitionCommand;
+import ru.rseu.gorkin.web.utils.DateTimeUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -28,7 +28,10 @@ public class ParticipateCommand implements Command {
         boolean isParticipate = daoFactory.getCompetitionParticipationDAO().isParticipate(competitionId, userId);
         String urlToReturn =
                 String.format("%s&id=%d", UrlUtils.getCommandUrl(CommandEnum.SHOW_COMPETITION.name()), competitionId);
-        if (!isParticipate) {
+        DateTimeUtils dateTimeUtils = new DateTimeUtils();
+        boolean isAnswerSendDateInFuture = dateTimeUtils.isInFuture(
+          daoFactory.getCompetitionDAO().getById(competitionId).getEndSendingAnswerDate());
+        if (!isParticipate && isAnswerSendDateInFuture) {
             daoFactory.getCompetitionParticipationDAO().participate(competitionId, userId);
         }
 //        request.setAttribute(SUCCESS_MESSAGE_ATTRIBUTE,"Теперь вы участвуете в конкурсе!");

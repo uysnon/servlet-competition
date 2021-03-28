@@ -225,6 +225,13 @@ public class OracleQueriesUtils {
         return (CompetitionParticipation) selectQueriesManager.selectPrepare(preparedStatement, getCompetitionParticipationMapFunction(connection)).stream().findAny().orElse(null);
     }
 
+    public Collection<Decision> getDecisionsByExpertId(Connection connection, int expertId) throws SQLException {
+        String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.decision.byExpertId");
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, expertId);
+        return selectQueriesManager.selectPrepare(preparedStatement, getDecisionMapFunction(connection));
+    }
+
 
     private Function<ResultSet, User> getUserMapFunction() {
         return (resultSet) -> {

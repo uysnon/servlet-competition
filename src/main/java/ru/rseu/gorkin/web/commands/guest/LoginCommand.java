@@ -52,13 +52,13 @@ public class LoginCommand implements Command {
         Roles role = user.getRole();
         String commandTitle = null;
         if (role == Roles.ADMINISTRATOR) {
-            commandTitle = CommandEnum.SHOW_USER_LIST.name();
+            commandTitle = CommandEnum.SHOW_USER_LIST.name().toLowerCase();
         }
         if (role == Roles.PARTICIPANT) {
-            commandTitle = CommandEnum.SHOW_ALL_COMPETITIONS.name();
+            commandTitle = CommandEnum.SHOW_ALL_COMPETITIONS.name().toLowerCase();
         }
         if (role == Roles.EXPERT) {
-            commandTitle = CommandEnum.SHOW_WORKS_TO_CHECK.name();
+            commandTitle = CommandEnum.SHOW_WORKS_TO_CHECK.name().toLowerCase();
         }
         return commandTitle;
     }

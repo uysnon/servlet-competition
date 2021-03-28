@@ -25,7 +25,7 @@ public class FirstLaunchFilter implements Filter {
                 CommandEnum.SHOW_USER_LIST,
                 CommandEnum.SHOW_CREATE_COMPETITION_PAGE,
                 CommandEnum.SHOW_USER_COMPETITIONS,
-                CommandEnum.SHOW_WORK_TO_CHECK
+                CommandEnum.SHOW_WORKS_TO_CHECK
         ).collect(Collectors.toList());
 
     }

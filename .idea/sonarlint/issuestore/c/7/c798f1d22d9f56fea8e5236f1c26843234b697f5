@@ -1,7 +1,7 @@
 
-H
-java:S1612;",Replace this lambda with a method reference.(ÏòéD8„†µÇ…/
-b
-java:S1128"@Remove this unused import 'ru.rseu.gorkin.web.commands.Command'.(ôÇ¦Æúÿÿÿÿ8„†µÇ…/
 —
 java:S1186@"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î
+b
+java:S1128"@Remove this unused import 'ru.rseu.gorkin.web.commands.Command'.(ôÇ¦Æúÿÿÿÿ8„†µÇ…/
+H
+java:S1612;",Replace this lambda with a method reference.(ÏòéD8„†µÇ…/

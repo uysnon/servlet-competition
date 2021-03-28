@@ -5,6 +5,7 @@ import ru.rseu.gorkin.datalayer.dto.*;
 import ru.rseu.gorkin.resources.utils.ConfigurationManagers;
 import ru.rseu.gorkin.web.FrontController;
 import ru.rseu.gorkin.web.commands.Command;
+import ru.rseu.gorkin.web.utils.DateTimeUtils;
 import ru.rseu.gorkin.web.validators.ValidationResultable;
 import ru.rseu.gorkin.web.viewclasses.CompetitionView;
 
@@ -42,6 +43,12 @@ public abstract class ShowCompetitionParticipation implements Command {
         String answer = competitionParticipation.getAnswer();
         if (answer == null || "".equals(answer.trim())) {
             isAnswerEditable = true;
+            DateTimeUtils dateTimeUtils = new DateTimeUtils();
+            boolean isAnswerSendDateInFuture = dateTimeUtils.isInFuture(
+                    competitionParticipation.getCompetition().getEndSendingAnswerDate());
+            if (!isAnswerSendDateInFuture){
+                isAnswerEditable = false;
+            }
         }
         if (request.getAttribute(ANSWER_ATTRIBUTE) == null){
             request.setAttribute(ANSWER_ATTRIBUTE, answer);

@@ -20,7 +20,11 @@
 <body>
 <div class="container container-main containter-top">
     <jsp:include page="../logged/top-bar.jsp"></jsp:include>
-    <h1>Участие в конкурсе №${competition_v.id}</h1>
+    <h1>Участие в
+        <a href="/?command=show_competition&id=${competition_v.id}">
+            конкурсе №${competition_v.id}
+        </a>
+    </h1>
     <c:catch var="exception">
         <c:if test="${! empty message}">
             <span class="error">${message}</span>
@@ -52,6 +56,7 @@
             >
                 ${answer}
             </textarea>
+            <br>
             <c:if test="${is_answer_editable}">
                 <button type="submit" class="btn btn-warning btn-dark">
                     Отправить
