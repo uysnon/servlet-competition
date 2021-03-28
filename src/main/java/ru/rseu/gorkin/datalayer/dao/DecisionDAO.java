@@ -8,7 +8,9 @@ import java.util.List;
 public interface DecisionDAO {
     void makeDecision(int expertId, int competitionParticipationId, Marks mark, String comment);
     List<Decision> getAll();
+    Decision get(int id);
     List<Decision> getExpertDecisions(int expertId);
     List<Decision> getDecisionsByCompetitionId(int competitionId);
     List<Decision> getDecisionsByCompetitionParticipationId(int competitionParticipationId);
+    boolean isDecisionMade(int expertId, int participationId);
 }

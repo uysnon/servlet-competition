@@ -2,6 +2,7 @@ package ru.rseu.gorkin.datalayer.db.oracle;
 
 import ru.rseu.gorkin.datalayer.dao.CompetitionParticipationDAO;
 import ru.rseu.gorkin.datalayer.dto.CompetitionParticipation;
+import ru.rseu.gorkin.datalayer.dto.Marks;
 import ru.rseu.gorkin.datalayer.dto.User;
 
 import java.sql.Connection;
@@ -108,5 +109,14 @@ public class OracleCompetitionParticipationDAO implements CompetitionParticipati
             throwables.printStackTrace();
         }
         return result;
+    }
+
+    @Override
+    public void setMark(int participationId, Marks mark) {
+        try {
+            oracleQueriesUtils.setMarkToCompetitionParticipation(connection, participationId, mark.getId());
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 }

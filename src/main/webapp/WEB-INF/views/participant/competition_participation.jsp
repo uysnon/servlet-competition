@@ -35,6 +35,21 @@
         <p><strong>Задание: </strong>${competition_v.task}</p>
         <p><strong>Дата окончания отправки решений: </strong>${competition_v.endSendingAnswerDate}</p>
         <p><strong>Стратегия оценивания: </strong>${competition_v.evaluationStrategy}</p>
+        <c:if test="${not is_answer_editable}">
+            <p><strong>Статус: </strong>
+                <c:choose>
+                    <c:when test="${competition_participation.mark == 'NOT_DEFINED'}">
+                        <span class="not-defined">Ожидается проверка</span>
+                    </c:when>
+                    <c:when test="${competition_participation.mark == 'NEGATIVE'}">
+                        <span class="error">Нет призового места</span>
+                    </c:when>
+                    <c:when test="${competition_participation.mark == 'POSITIVE'}">
+                        <span class="success">Призер</span>
+                    </c:when>
+                </c:choose>
+            </p>
+        </c:if>
         <br>
         <strong>Ответ пользователя</strong>
         <c:catch var="exception">

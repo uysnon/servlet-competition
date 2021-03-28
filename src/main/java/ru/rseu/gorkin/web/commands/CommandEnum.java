@@ -1,9 +1,7 @@
 package ru.rseu.gorkin.web.commands;
 
 import ru.rseu.gorkin.web.commands.admin.*;
-import ru.rseu.gorkin.web.commands.expert.MakeDecisionCommand;
-import ru.rseu.gorkin.web.commands.expert.ShowWorkToCheckCommand;
-import ru.rseu.gorkin.web.commands.expert.ShowWorksToCheckCommand;
+import ru.rseu.gorkin.web.commands.expert.*;
 import ru.rseu.gorkin.web.commands.guest.*;
 import ru.rseu.gorkin.web.commands.loggedin.*;
 import ru.rseu.gorkin.web.commands.participant.*;
@@ -27,9 +25,9 @@ public enum CommandEnum {
     SHOW_COMPETITION(new ShowCompetitionCommand()),
     CREATE_COMPETITION(new CreateCompetitionCommand()),
     SHOW_CREATE_COMPETITION_PAGE(new ShowCreateCompetitionPageCommand(), "Создать конкурс"),
-    SHOW_EXPERT_DECISION(new ShowExpertDecisionCommand()),
     MAKE_DECISION(new MakeDecisionCommand()),
-    SHOW_WORK_TO_CHECK(new ShowWorkToCheckCommand()),
+    SHOW_WORK_TO_CHECK_BY_PARTICIPATION(new ShowWorkToCheckByParticipationCommand()),
+    SHOW_WORK_TO_CHECK_BY_DECISION(new ShowWorkToCheckByDecisionCommand()),
     PARTICIPATE(new ParticipateCommand(), "Участвовать"),
     SHOW_USER_COMPETITIONS(new ShowUserCompetitions(), "Мои конкурсы"),
     SHOW_CHANGE_COMPETITION_COMMAND(new ShowChangeCompetitionCommand(),"Изменить"),

@@ -33,6 +33,17 @@ public class OracleDecisionDAO implements DecisionDAO {
     }
 
     @Override
+    public Decision get(int id) {
+        Decision decision = null;
+        try {
+            decision = oracleQueriesUtils.getDecisionById(connection, id);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return decision;
+    }
+
+    @Override
     public List<Decision> getExpertDecisions(int expertId) {
         List<Decision> decisions = null;
         try {
@@ -61,6 +72,21 @@ public class OracleDecisionDAO implements DecisionDAO {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+        return result;
+    }
+
+    @Override
+    public boolean isDecisionMade(int expertId, int participationId) {
+        boolean result = false;
+        try {
+            int count = oracleQueriesUtils.getCountDecisionByExpertAndParticipationId(connection, expertId, participationId);
+            if (count > 0) {
+                result = true;
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
         return result;
     }
 }

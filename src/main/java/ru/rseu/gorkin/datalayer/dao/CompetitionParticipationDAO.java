@@ -1,6 +1,7 @@
 package ru.rseu.gorkin.datalayer.dao;
 
 import ru.rseu.gorkin.datalayer.dto.CompetitionParticipation;
+import ru.rseu.gorkin.datalayer.dto.Marks;
 import ru.rseu.gorkin.datalayer.dto.User;
 
 import java.util.List;
@@ -15,4 +16,5 @@ public interface CompetitionParticipationDAO {
     void makeAnswer(int participationId, String answer);
     List<CompetitionParticipation> getByCompetitionId(int competitionId);
     List<CompetitionParticipation> getByParticipantId(int participantId);
+    void setMark(int participationId, Marks mark);
 }

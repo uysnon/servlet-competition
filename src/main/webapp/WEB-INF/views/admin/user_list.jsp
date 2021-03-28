@@ -26,6 +26,7 @@
         <table class="table">
             <thead>
             <tr>
+                <th scope="col">Id</th>
                 <th scope="col">Login</th>
                 <th scope="col">Name</th>
                 <th scope="col">Status</th>
@@ -35,6 +36,7 @@
             <tbody>
             <c:forEach items="${participant_users}" var="user">
                 <tr>
+                    <th scope="row">${user.id}</th>
                     <th scope="row">${user.login}</th>
                     <td>${user.name}</td>
                     <td>${user.status.description}</td>
@@ -78,6 +80,7 @@
         <table class="table">
             <thead>
             <tr>
+                <th scope="col">Id</th>
                 <th scope="col">Login</th>
                 <th scope="col">Name</th>
                 <th scope="col">Status</th>
@@ -87,6 +90,7 @@
             <tbody>
             <c:forEach items="${expert_users}" var="user">
                 <tr>
+                    <th scope="row">${user.id}</th>
                     <th scope="row">${user.login}</th>
                     <td>${user.name}</td>
                     <td>${user.status.description}</td>
@@ -131,6 +135,7 @@
         <table class="table">
             <thead>
             <tr>
+                <th scope="col">Id</th>
                 <th scope="col">Login</th>
                 <th scope="col">Name</th>
                 <th scope="col">Status</th>
@@ -140,6 +145,7 @@
             <tbody>
             <c:forEach items="${admin_users}" var="user">
                 <tr>
+                    <th scope="row">${user.id}</th>
                     <th scope="row">${user.login}</th>
                     <td>${user.name}</td>
                     <td>${user.status.description}</td>

@@ -31,7 +31,7 @@
                 <tbody>
                 <c:forEach items="${competitions_to_check_v}" var="competition" varStatus="loop">
                     <tr style="transform: rotate(0);">
-                        <th><a href="/?command=show_work_to_check&id=${competition.participationId}"
+                        <th><a href="/?command=show_work_to_check_by_participation&id=${competition.participationId}"
                                class="stretched-link">${competition.competitionId}</a></th>
                         <td>${competition.task}</td>
                         <td>${competition.participantName}</td>
@@ -56,26 +56,11 @@
                 <tbody>
                 <c:forEach items="${competitions_history_v}" var="competition" varStatus="loop">
                     <tr style="transform: rotate(0);">
-                        <th><a href="/?command=show_work_to_check&id=${competition.participationId}"
+                        <th><a href="/?command=show_work_to_check_by_decision&id=${competition.decisionId}"
                                class="stretched-link">${competition.competitionId}</a></th>
                         <td>${competition.task}</td>
-                        <td>${competition.participantName}></td>
+                        <td>${competition.participantName}</td>
                         <td>${competition.checkStatus}</td>
-
-                        <td>
-                            <c:choose>
-                                <c:when test="${competition.mark == 'NOT_DEFINED'}">
-                                    <span class="not-defined">?</span>
-                                </c:when>
-                                <c:when test="${competition.mark == 'NEGATIVE'}">
-                                    <span class="error">Не одобрено</span>
-                                </c:when>
-                                <c:when test="${competition.mark == 'POSITIVE'}">
-                                    <span class="success">Одобрено</span>
-                                </c:when>
-                            </c:choose>
-                        </td>
-                        </td>
                     </tr>
                 </c:forEach>
                 </tbody>

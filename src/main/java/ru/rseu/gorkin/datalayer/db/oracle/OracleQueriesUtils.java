@@ -124,6 +124,7 @@ public class OracleQueriesUtils {
         if (rs.next()) {
             generatedId = rs.getInt(1);
         }
+        rs.close();
         return generatedId;
     }
 
@@ -182,13 +183,16 @@ public class OracleQueriesUtils {
         preparedStatement.setInt(2, competitionId);
         ResultSet resultSet = preparedStatement.executeQuery();
         resultSet.next();
-        return resultSet.getInt("COUNT");
+        int count =  resultSet.getInt("COUNT");
+        resultSet.close();
+        return count;
     }
 
     public Collection<CompetitionParticipation> getCompetitionParticipationsNeedToVerify(Connection connection, int expertId) throws SQLException {
         String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.competitionParticipation.select.needToVerifyByExpertId");
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setInt(1, expertId);
+        preparedStatement.setInt(2, expertId);
         return selectQueriesManager.selectPrepare(preparedStatement, getCompetitionParticipationMapFunction(connection));
     }
 
@@ -201,7 +205,7 @@ public class OracleQueriesUtils {
     }
 
     public void makeDecision(Connection connection, int expertId, int competitionParticipationId, Marks mark, String comment) throws SQLException {
-        String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.competitionParticipation.insert.answer");
+        String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.decision.insert");
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setInt(1, expertId);
         preparedStatement.setInt(2, competitionParticipationId);
@@ -230,6 +234,35 @@ public class OracleQueriesUtils {
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setInt(1, expertId);
         return selectQueriesManager.selectPrepare(preparedStatement, getDecisionMapFunction(connection));
+    }
+
+    public Decision getDecisionById(Connection connection, int id) throws SQLException {
+        String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.decision.select.byId");
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, id);
+        Collection<Decision> decisions = selectQueriesManager.selectPrepare(preparedStatement, getDecisionMapFunction(connection));
+        return decisions.stream().findAny().orElse(null);
+    }
+
+    public int getCountDecisionByExpertAndParticipationId(Connection connection, int expertId, int participationId) throws SQLException {
+        String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.decision.select.countByExpertAndParticipationId");
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, expertId);
+        preparedStatement.setInt(2, participationId);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        resultSet.next();
+        int count =  resultSet.getInt("COUNT");
+        resultSet.close();
+        return count;
+    }
+
+    public void setMarkToCompetitionParticipation(Connection connection, int compeitionParticipationId, int markId) throws SQLException {
+        String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.competitionParticipation.updateMark");
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, markId);
+        preparedStatement.setInt(2, compeitionParticipationId);
+        preparedStatement.executeUpdate();
+
     }
 
 

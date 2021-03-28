@@ -17,6 +17,7 @@ public class SelectQueriesManager<T> {
             while (resultSet.next()) {
                 result.add(mapFunction.apply(resultSet));
             }
+            resultSet.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -32,6 +33,7 @@ public class SelectQueriesManager<T> {
             while (resultSet.next()) {
                 result.add(mapFunction.apply(resultSet));
             }
+            resultSet.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

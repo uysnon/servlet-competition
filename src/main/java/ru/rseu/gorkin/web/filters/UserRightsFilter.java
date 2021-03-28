@@ -3,6 +3,7 @@ package ru.rseu.gorkin.web.filters;
 
 import ru.rseu.gorkin.datalayer.dto.Roles;
 import ru.rseu.gorkin.resources.utils.ConfigurationManagers;
+import ru.rseu.gorkin.web.commands.Command;
 import ru.rseu.gorkin.web.commands.CommandEnum;
 import ru.rseu.gorkin.web.commands.UrlUtils;
 
@@ -31,8 +32,7 @@ public class UserRightsFilter implements Filter {
                 CommandEnum.LOGOUT,
                 CommandEnum.SHOW_ALL_COMPETITIONS,
                 CommandEnum.DELETE,
-                CommandEnum.SHOW_COMPETITION,
-                CommandEnum.SHOW_EXPERT_DECISION)
+                CommandEnum.SHOW_COMPETITION)
                 .collect(Collectors.toList());
 
         participantActions = Stream.of(
@@ -55,7 +55,8 @@ public class UserRightsFilter implements Filter {
 
         expertActions = Stream.of(
                 CommandEnum.SHOW_WORKS_TO_CHECK,
-                CommandEnum.SHOW_WORK_TO_CHECK,
+                CommandEnum.SHOW_WORK_TO_CHECK_BY_DECISION,
+                CommandEnum.SHOW_WORK_TO_CHECK_BY_PARTICIPATION,
                 CommandEnum.MAKE_DECISION)
                 .collect(Collectors.toList());
 
