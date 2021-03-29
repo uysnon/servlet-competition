@@ -9,17 +9,19 @@ public class User {
     private String name;
     private Roles role;
     private Statuses status;
+    private int sessionsCount;
 
     public User() {
     }
 
-    public User(int id, String login, String password, String name, Roles role, Statuses status) {
+    public User(int id, String login, String password, String name, Roles role, Statuses status, int sessionsCount) {
         this.id = id;
         this.login = login;
         this.password = password;
         this.name = name;
         this.role = role;
         this.status = status;
+        this.sessionsCount = sessionsCount;
     }
 
     public int getId() {
@@ -70,12 +72,22 @@ public class User {
         this.status = status;
     }
 
+
+    public int getSessionsCount() {
+        return sessionsCount;
+    }
+
+    public void setSessionsCount(int sessionsCount) {
+        this.sessionsCount = sessionsCount;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof User)) return false;
         User user = (User) o;
         return id == user.id &&
+                sessionsCount == user.sessionsCount &&
                 Objects.equals(login, user.login) &&
                 Objects.equals(password, user.password) &&
                 Objects.equals(name, user.name) &&
@@ -85,7 +97,7 @@ public class User {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, login, password, name, role, status);
+        return Objects.hash(id, login, password, name, role, status, sessionsCount);
     }
 
     @Override
@@ -97,6 +109,7 @@ public class User {
                 ", name='" + name + '\'' +
                 ", role=" + role +
                 ", status=" + status +
+                ", sessionsCount=" + sessionsCount +
                 '}';
     }
 }

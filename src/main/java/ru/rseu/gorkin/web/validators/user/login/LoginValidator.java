@@ -1,7 +1,7 @@
 package ru.rseu.gorkin.web.validators.user.login;
 
 import ru.rseu.gorkin.datalayer.dao.DAOFactory;
-import ru.rseu.gorkin.web.FrontController;
+import ru.rseu.gorkin.web.servlets.FrontController;
 import ru.rseu.gorkin.web.validators.NormalValidationResultable;
 import ru.rseu.gorkin.web.validators.ValidationResultable;
 import ru.rseu.gorkin.web.validators.Validator;

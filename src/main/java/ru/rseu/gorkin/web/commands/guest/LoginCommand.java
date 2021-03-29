@@ -5,7 +5,7 @@ import ru.rseu.gorkin.datalayer.dao.DAOFactory;
 import ru.rseu.gorkin.datalayer.dto.Roles;
 import ru.rseu.gorkin.datalayer.dto.User;
 import ru.rseu.gorkin.resources.utils.ConfigurationManagers;
-import ru.rseu.gorkin.web.FrontController;
+import ru.rseu.gorkin.web.servlets.FrontController;
 import ru.rseu.gorkin.web.commands.Command;
 import ru.rseu.gorkin.web.commands.CommandEnum;
 import ru.rseu.gorkin.web.commands.UrlUtils;
@@ -38,6 +38,7 @@ public class LoginCommand implements Command {
         request.setAttribute("errorLoginPassMessage", authenticationResult.getDescription());
         if (authenticationResult == AuthenticationResults.SUCCESS) {
             User user = daoFactory.getUserDAO().get(login);
+            daoFactory.getUserDAO().incrementSessionsCount(user.getId());
             request.getSession().setAttribute(ConfigurationManagers.WEB_MANAGER.getProperty("session.attribute.login"), login);
             request.getSession().setAttribute(ConfigurationManagers.WEB_MANAGER.getProperty("session.attribute.role"), user.getRole());
             request.getSession().setAttribute(ConfigurationManagers.WEB_MANAGER.getProperty("session.attribute.id"), user.getId());

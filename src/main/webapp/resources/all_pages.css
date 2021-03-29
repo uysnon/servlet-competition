@@ -46,6 +46,11 @@
     overflow-y: scroll;
 }
 
+.registration-form{
+    position: relative;
+    z-index: 999;
+}
+
 /*.text-center{*/
 /*    text-align: center;*/
 /*}*/

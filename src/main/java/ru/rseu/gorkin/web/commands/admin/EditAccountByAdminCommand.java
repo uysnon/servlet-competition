@@ -1,12 +1,10 @@
 package ru.rseu.gorkin.web.commands.admin;
 
 import ru.rseu.gorkin.datalayer.dao.DAOFactory;
-import ru.rseu.gorkin.resources.utils.ConfigurationManagers;
-import ru.rseu.gorkin.web.FrontController;
+import ru.rseu.gorkin.web.servlets.FrontController;
 import ru.rseu.gorkin.web.commands.Command;
 import ru.rseu.gorkin.web.commands.CommandEnum;
 import ru.rseu.gorkin.web.commands.UrlUtils;
-import ru.rseu.gorkin.web.commands.loggedin.ShowEditAccountByUserPageCommand;
 import ru.rseu.gorkin.web.validators.ValidationResultable;
 import ru.rseu.gorkin.web.validators.ValidationUtils;
 import ru.rseu.gorkin.web.validators.Validator;

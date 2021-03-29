@@ -7,14 +7,20 @@
     <display-name>Web Chat</display-name>
 
     <servlet>
-        <servlet-name>MyServlet</servlet-name>
-        <servlet-class>ru.rseu.gorkin.web.FrontController</servlet-class>
+        <servlet-name>FrontController</servlet-name>
+        <servlet-class>ru.rseu.gorkin.web.servlets.FrontController</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>MyServlet</servlet-name>
+        <servlet-name>FrontController</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
+    <listener>
+        <listener-class>
+            ru.rseu.gorkin.web.listeners.SessionLifecycleListener
+        </listener-class>
+    </listener>
 
     <filter>
         <filter-name>userRightsFilter</filter-name>

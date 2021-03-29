@@ -3,7 +3,7 @@ package ru.rseu.gorkin.web.commands.admin;
 import ru.rseu.gorkin.datalayer.dao.DAOFactory;
 import ru.rseu.gorkin.datalayer.db.oracle.StrategyAdapters;
 import ru.rseu.gorkin.datalayer.dto.CompetitionResultable;
-import ru.rseu.gorkin.web.FrontController;
+import ru.rseu.gorkin.web.servlets.FrontController;
 import ru.rseu.gorkin.web.commands.Command;
 import ru.rseu.gorkin.web.validators.*;
 import ru.rseu.gorkin.web.validators.competition.dates.CompetitionDatesValidatorResults;

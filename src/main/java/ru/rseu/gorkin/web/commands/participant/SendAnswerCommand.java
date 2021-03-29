@@ -2,7 +2,7 @@ package ru.rseu.gorkin.web.commands.participant;
 
 import ru.rseu.gorkin.datalayer.dao.DAOFactory;
 import ru.rseu.gorkin.datalayer.dto.CompetitionParticipation;
-import ru.rseu.gorkin.web.FrontController;
+import ru.rseu.gorkin.web.servlets.FrontController;
 import ru.rseu.gorkin.web.commands.Command;
 import ru.rseu.gorkin.web.commands.CommandEnum;
 import ru.rseu.gorkin.web.commands.UrlUtils;

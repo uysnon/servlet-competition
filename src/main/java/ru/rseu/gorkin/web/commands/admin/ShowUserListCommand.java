@@ -4,7 +4,7 @@ import ru.rseu.gorkin.datalayer.dao.DAOFactory;
 import ru.rseu.gorkin.datalayer.dto.Roles;
 import ru.rseu.gorkin.datalayer.dto.User;
 import ru.rseu.gorkin.resources.utils.ConfigurationManagers;
-import ru.rseu.gorkin.web.FrontController;
+import ru.rseu.gorkin.web.servlets.FrontController;
 import ru.rseu.gorkin.web.commands.Command;
 
 import javax.servlet.ServletException;

@@ -30,6 +30,7 @@
                 <th scope="col">Login</th>
                 <th scope="col">Name</th>
                 <th scope="col">Status</th>
+                <th scope="col">Online</th>
                 <th scope="col">Actions</th>
             </tr>
             </thead>
@@ -44,6 +45,7 @@
                     <th scope="row">${user.login}</th>
                     <td>${user.name}</td>
                     <td>${user.status.description}</td>
+                    <td>${user.sessionsCount}</td>
                     <td>
                         <c:choose>
                             <c:when test="${user.status == 'ACTIVE'}">
@@ -89,6 +91,7 @@
                 <th scope="col">Login</th>
                 <th scope="col">Name</th>
                 <th scope="col">Status</th>
+                <th scope="col">Online</th>
                 <th scope="col">Actions</th>
             </tr>
             </thead>
@@ -103,6 +106,7 @@
                     <th scope="row">${user.login}</th>
                     <td>${user.name}</td>
                     <td>${user.status.description}</td>
+                    <td>${user.sessionsCount}</td>
                     <td>
                         <c:choose>
                             <c:when test="${user.status == 'ACTIVE'}">
@@ -149,6 +153,7 @@
                 <th scope="col">Login</th>
                 <th scope="col">Name</th>
                 <th scope="col">Status</th>
+                <th scope="col">Online</th>
                 <th scope="col">Actions</th>
             </tr>
             </thead>
@@ -159,6 +164,7 @@
                     <th scope="row">${user.login}</th>
                     <td>${user.name}</td>
                     <td>${user.status.description}</td>
+                    <td>${user.sessionsCount}</td>
                     <td>
                         <c:choose>
                             <c:when test="${user.status == 'ACTIVE'}">

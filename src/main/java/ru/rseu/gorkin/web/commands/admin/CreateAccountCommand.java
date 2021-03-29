@@ -2,12 +2,10 @@ package ru.rseu.gorkin.web.commands.admin;
 
 import ru.rseu.gorkin.datalayer.dao.DAOFactory;
 import ru.rseu.gorkin.datalayer.dto.Roles;
-import ru.rseu.gorkin.web.FrontController;
+import ru.rseu.gorkin.web.servlets.FrontController;
 import ru.rseu.gorkin.web.commands.Command;
 import ru.rseu.gorkin.web.commands.CommandEnum;
 import ru.rseu.gorkin.web.commands.UrlUtils;
-import ru.rseu.gorkin.web.commands.guest.ShowLoginPageCommand;
-import ru.rseu.gorkin.web.commands.guest.ShowRegistrationPageCommand;
 import ru.rseu.gorkin.web.validators.ValidationResultable;
 import ru.rseu.gorkin.web.validators.ValidationUtils;
 import ru.rseu.gorkin.web.validators.Validator;
@@ -20,7 +18,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 

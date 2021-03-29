@@ -20,7 +20,6 @@ public class OracleUserDAO implements UserDAO {
         this.oracleQueriesUtils = new OracleQueriesUtils();
     }
 
-
     @Override
     public void block(String login) {
         try {
@@ -145,4 +144,34 @@ public class OracleUserDAO implements UserDAO {
         }
     }
 
+    @Override
+    public void incrementSessionsCount(int userId) {
+        User user = get(userId);
+        int sessionsCount = user.getSessionsCount() + 1;
+        try {
+            oracleQueriesUtils.setSessionsCount(connection, userId,sessionsCount);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    @Override
+    public void decrementSessionsCount(int userId) {
+        User user = get(userId);
+        int sessionsCount = user.getSessionsCount() - 1;
+        try {
+            oracleQueriesUtils.setSessionsCount(connection, userId,sessionsCount);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    @Override
+    public void setDefaultSessionsCount() {
+        try {
+            oracleQueriesUtils.setDefaultSessionsCount(connection);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 }

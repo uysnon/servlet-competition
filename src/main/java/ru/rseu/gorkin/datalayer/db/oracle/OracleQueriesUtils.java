@@ -314,6 +314,21 @@ public class OracleQueriesUtils {
         preparedStatement.close();
     }
 
+    public void setSessionsCount(Connection connection, int userId, int sessionsCount) throws SQLException {
+        String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.user.update.sessionsCount");
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, sessionsCount);
+        preparedStatement.setInt(2, userId);
+        preparedStatement.executeUpdate();
+        preparedStatement.close();
+    }
+
+    public void setDefaultSessionsCount(Connection connection) throws SQLException {
+        String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.user.setDefaultSessionsCount");
+        Statement statement = connection.createStatement();
+        statement.executeUpdate(query);
+    }
+
     private Function<ResultSet, User> getUserMapFunction() {
         return (resultSet) -> {
             Roles role = null;
@@ -321,6 +336,7 @@ public class OracleQueriesUtils {
             String login = null;
             String password = null;
             String name = null;
+            int sessionsCount = 0;
             int id = 0;
             try {
                 id = resultSet.getInt("ID");
@@ -329,10 +345,11 @@ public class OracleQueriesUtils {
                 login = resultSet.getString("LOGIN");
                 password = resultSet.getString("PASSWORD");
                 name = resultSet.getString("NAME");
+                sessionsCount = resultSet.getInt("SESSIONS_COUNT");
             } catch (SQLException throwables) {
                 throw new IllegalArgumentException();
             }
-            return new User(id, login, password, name, role, status);
+            return new User(id, login, password, name, role, status, sessionsCount);
         };
     }
 

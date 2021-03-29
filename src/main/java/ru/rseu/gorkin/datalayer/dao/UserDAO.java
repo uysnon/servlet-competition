@@ -19,4 +19,7 @@ public interface UserDAO {
 	boolean isLoginExist(String login);
 	void createUser(String login, String password, String name, Roles role);
     void editUser(int userId, String name, String password);
+    void incrementSessionsCount(int userId);
+    void decrementSessionsCount(int userId);
+    void setDefaultSessionsCount();
 }

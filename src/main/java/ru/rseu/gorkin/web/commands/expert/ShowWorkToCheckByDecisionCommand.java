@@ -1,7 +1,7 @@
 package ru.rseu.gorkin.web.commands.expert;
 
 import ru.rseu.gorkin.datalayer.dao.DAOFactory;
-import ru.rseu.gorkin.web.FrontController;
+import ru.rseu.gorkin.web.servlets.FrontController;
 import ru.rseu.gorkin.web.viewclasses.CompetitionForExpertView;
 
 import javax.servlet.http.HttpServletRequest;
