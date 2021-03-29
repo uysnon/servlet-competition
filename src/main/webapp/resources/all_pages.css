@@ -41,6 +41,11 @@
     color: green;
 }
 
+.table-overflow{
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
 /*.text-center{*/
 /*    text-align: center;*/
 /*}*/

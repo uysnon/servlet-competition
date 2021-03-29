@@ -30,11 +30,16 @@ public enum CommandEnum {
     SHOW_WORK_TO_CHECK_BY_DECISION(new ShowWorkToCheckByDecisionCommand()),
     PARTICIPATE(new ParticipateCommand(), "Участвовать"),
     SHOW_USER_COMPETITIONS(new ShowUserCompetitions(), "Мои конкурсы"),
-    SHOW_CHANGE_COMPETITION_COMMAND(new ShowChangeCompetitionCommand(),"Изменить"),
+    SHOW_CHANGE_COMPETITION_COMMAND(new ShowChangeCompetitionCommand(), "Изменить"),
     CHANGE_COMPETITION_COMMAND(new ChangeCompetitionCommand()),
     SHOW_COMPETITION_PARTICIPATION_ID(new ShowCompetitionParticipationById()),
     SHOW_COMPETITION_PARTICIPATION_UCID(new ShowCompetitionParticipateByUserAndCompetitionIds()),
-    SEND_ANSWER(new SendAnswerCommand());
+    SEND_ANSWER(new SendAnswerCommand()),
+    SHOW_EDIT_ACCOUNT_BY_USER(new ShowEditAccountByUserPageCommand(), "Учетная запись"),
+    EDIT_ACCOUNT_BY_USER(new EditAccountByUserCommand()),
+    SHOW_EDIT_ACCOUNT_BY_ADMIN(new ShowEditAccountByAdminPageCommand()),
+    EDIT_ACCOUNT_BY_ADMIN(new EditAccountByAdminCommand());
+
 
     private Command command;
     private String title;
@@ -43,7 +48,8 @@ public enum CommandEnum {
         this.command = command;
         this.title = "empty";
     }
-    CommandEnum(Command command, String title){
+
+    CommandEnum(Command command, String title) {
         this.command = command;
         this.title = title;
     }

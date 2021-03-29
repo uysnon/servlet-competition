@@ -22,7 +22,7 @@
     <h1>Список учетных записей</h1>
     <br>
     <h2>Участники</h2>
-    <div class="user-list">
+    <div class="user-list table-overflow">
         <table class="table">
             <thead>
             <tr>
@@ -35,34 +35,39 @@
             </thead>
             <tbody>
             <c:forEach items="${participant_users}" var="user">
-                <tr>
-                    <th scope="row">${user.id}</th>
+                <tr style="transform: rotate(0);">
+                    <th scope="row">
+                        <a href="/?command=show_edit_account_by_admin&id=${user.id}"
+                           class="stretched-link">${user.id}
+                        </a>
+                    </th>
                     <th scope="row">${user.login}</th>
                     <td>${user.name}</td>
                     <td>${user.status.description}</td>
                     <td>
                         <c:choose>
                             <c:when test="${user.status == 'ACTIVE'}">
-                                <a href="/?command=block&user_login=${user.login}&previousPage=show_user_list">
-                                    <button type="button" class="btn btn-warning">Заблокировать</button>
-                                </a>
-                                <a href="/?command=delete&user_login=${user.login}&previousPage=show_user_list">
-                                    <button type="button" class="btn btn-danger">Удалить</button>
-                                </a>
-
+                                <form class="registration-form" method="post" action="/">
+                                    <input type="hidden" name="user_login" value="${user.login}"/>
+                                    <input type="hidden" name="previousPage" value="show_user_list"/>
+                                    <button type="submit" name="command" value="block" class="btn btn-warning">
+                                        Заблокировать
+                                    </button>
+                                    <button type="submit" name="command" value="delete" class="btn btn-danger">Удалить
+                                    </button>
+                                </form>
                             </c:when>
 
                             <c:when test="${user.status == 'BLOCKED'}">
-
-                                <a href="/?command=unblock&user_login=${user.login}&previousPage=show_user_list">
-                                    <button type="button" class="btn btn-success">Разблокировать
+                                <form class="registration-form" method="post" action="/">
+                                    <input type="hidden" name="user_login" value="${user.login}"/>
+                                    <input type="hidden" name="previousPage" value="show_user_list"/>
+                                    <button type="submit" name="command" value="unblock" class="btn btn-success">
+                                        Разблокировать
                                     </button>
-                                </a>
-
-                                <a href="/?command=delete&user_login=${user.login}&previousPage=show_user_list">
-                                    <button type="button" class="btn btn-danger">Удалить</button>
-                                </a>
-
+                                    <button type="submit" name="command" value="delete" class="btn btn-danger">Удалить
+                                    </button>
+                                </form>
                             </c:when>
                             <c:otherwise>
                                 -
@@ -74,9 +79,9 @@
             </tbody>
         </table>
     </div>
-
+    <br> <br>
     <h2>Эксперты</h2>
-    <div class="user-list">
+    <div class="user-list table-overflow">
         <table class="table">
             <thead>
             <tr>
@@ -89,8 +94,12 @@
             </thead>
             <tbody>
             <c:forEach items="${expert_users}" var="user">
-                <tr>
-                    <th scope="row">${user.id}</th>
+                <tr style="transform: rotate(0);">
+                    <th scope="row">
+                        <a href="/?command=show_edit_account_by_admin&id=${user.id}"
+                           class="stretched-link">${user.id}
+                        </a>
+                    </th>
                     <th scope="row">${user.login}</th>
                     <td>${user.name}</td>
                     <td>${user.status.description}</td>
@@ -100,8 +109,11 @@
                                 <form class="registration-form" method="post" action="/">
                                     <input type="hidden" name="user_login" value="${user.login}"/>
                                     <input type="hidden" name="previousPage" value="show_user_list"/>
-                                    <button type="submit" name="command" value="block" class="btn btn-warning">Заблокировать</button>
-                                    <button type="submit" name="command" value="delete" class="btn btn-danger">Удалить</button>
+                                    <button type="submit" name="command" value="block" class="btn btn-warning">
+                                        Заблокировать
+                                    </button>
+                                    <button type="submit" name="command" value="delete" class="btn btn-danger">Удалить
+                                    </button>
                                 </form>
                             </c:when>
 
@@ -109,8 +121,11 @@
                                 <form class="registration-form" method="post" action="/">
                                     <input type="hidden" name="user_login" value="${user.login}"/>
                                     <input type="hidden" name="previousPage" value="show_user_list"/>
-                                    <button type="submit" name="command" value="unblock" class="btn btn-success">Разблокировать</button>
-                                    <button type="submit" name="command" value="delete" class="btn btn-danger">Удалить</button>
+                                    <button type="submit" name="command" value="unblock" class="btn btn-success">
+                                        Разблокировать
+                                    </button>
+                                    <button type="submit" name="command" value="delete" class="btn btn-danger">Удалить
+                                    </button>
                                 </form>
                             </c:when>
                             <c:otherwise>
@@ -123,9 +138,9 @@
             </tbody>
         </table>
     </div>
-
+    <br> <br>
     <h2>Администраторы</h2>
-    <div class="user-list">
+    <div class="user-list table-overflow">
 
         <table class="table">
             <thead>
@@ -148,9 +163,13 @@
                         <c:choose>
                             <c:when test="${user.status == 'ACTIVE'}">
                                 <c:if test="${user.login eq sessionScope.login}">
-                                    <a href="/?command=delete&user_login=${user.login}&previousPage=show_user_list">
-                                        <button type="button" class="btn btn-danger">Удалить</button>
-                                    </a>
+                                    <form class="registration-form" method="post" action="/">
+                                        <input type="hidden" name="user_login" value="${user.login}"/>
+                                        <input type="hidden" name="previousPage" value="show_user_list"/>
+                                        <button type="submit" name="command" value="delete" class="btn btn-danger">
+                                            Удалить
+                                        </button>
+                                    </form>
                                 </c:if>
                             </c:when>
                             <c:otherwise>
@@ -163,6 +182,7 @@
             </tbody>
         </table>
     </div>
+    <br>
 
 </body>
 </html>

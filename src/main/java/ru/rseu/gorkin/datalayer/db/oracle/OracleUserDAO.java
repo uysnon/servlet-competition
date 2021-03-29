@@ -136,4 +136,13 @@ public class OracleUserDAO implements UserDAO {
         }
     }
 
+    @Override
+    public void editUser(int userId, String name, String password) {
+        try {
+            oracleQueriesUtils.editUser(connection, userId, name, password);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
 }

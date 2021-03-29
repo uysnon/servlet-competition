@@ -1,5 +1,6 @@
 package ru.rseu.gorkin.web.commands.admin;
 
+import ru.rseu.gorkin.datalayer.dto.Roles;
 import ru.rseu.gorkin.resources.utils.ConfigurationManagers;
 import ru.rseu.gorkin.web.commands.Command;
 import ru.rseu.gorkin.web.validators.NormalValidationResultable;

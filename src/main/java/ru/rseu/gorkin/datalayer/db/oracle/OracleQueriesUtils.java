@@ -304,6 +304,16 @@ public class OracleQueriesUtils {
         preparedStatement.close();
     }
 
+    public void editUser(Connection connection, int userId, String name, String password) throws SQLException {
+        String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.user.update.nameAndPassword");
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setString(1, name);
+        preparedStatement.setString(2, password);
+        preparedStatement.setInt(3, userId);
+        preparedStatement.executeUpdate();
+        preparedStatement.close();
+    }
+
     private Function<ResultSet, User> getUserMapFunction() {
         return (resultSet) -> {
             Roles role = null;

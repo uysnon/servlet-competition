@@ -32,7 +32,9 @@ public class UserRightsFilter implements Filter {
                 CommandEnum.LOGOUT,
                 CommandEnum.SHOW_ALL_COMPETITIONS,
                 CommandEnum.DELETE,
-                CommandEnum.SHOW_COMPETITION)
+                CommandEnum.SHOW_COMPETITION,
+                CommandEnum.SHOW_EDIT_ACCOUNT_BY_USER,
+                CommandEnum.EDIT_ACCOUNT_BY_USER)
                 .collect(Collectors.toList());
 
         participantActions = Stream.of(
@@ -50,7 +52,9 @@ public class UserRightsFilter implements Filter {
                 CommandEnum.SHOW_CREATE_COMPETITION_PAGE,
                 CommandEnum.CREATE_COMPETITION,
                 CommandEnum.SHOW_CHANGE_COMPETITION_COMMAND,
-                CommandEnum.CHANGE_COMPETITION_COMMAND)
+                CommandEnum.CHANGE_COMPETITION_COMMAND,
+                CommandEnum.EDIT_ACCOUNT_BY_ADMIN,
+                CommandEnum.SHOW_EDIT_ACCOUNT_BY_ADMIN)
                 .collect(Collectors.toList());
 
         expertActions = Stream.of(

@@ -27,7 +27,6 @@
         <h1>Регистрация</h1>
         <p>Пожалуйста, заполните поля ниже, чтобы создать аккаунт участника</p>
         <hr>
-
         <div class="form-group row">
 
             <label for="login">
@@ -73,7 +72,6 @@
 
         </div>
         <hr>
-
         <button type="submit" class="registerbtn myButton">Зарегистрироваться</button>
     </div>
 
@@ -81,6 +79,5 @@
         <p>Уже есть аккаунт? <a href="/?command=show_login_page">Войти</a></p>
     </div>
 </form>
-
 </body>
 </html>

@@ -232,3 +232,5 @@ Vsrc/main/java/ru/rseu/gorkin/web/commands/expert/ShowWorkToCheckByDecisionComma
 [src/main/java/ru/rseu/gorkin/web/commands/expert/ShowWorkToCheckByParticipationCommand.java,9\b\9b198e9ba6e09eedecf28a4c5d57357d79368cb9
 y
 Isrc/main/java/ru/rseu/gorkin/web/commands/expert/MakeDecisionCommand.java,9\5\95f1178e674043f8e03572b55180439df3d7b5ed
+`
+0src/main/webapp/WEB-INF/views/logged/top-bar.jsp,f\8\f8a38d99fa83972d26f4d4a7474ba1e6ef38021b

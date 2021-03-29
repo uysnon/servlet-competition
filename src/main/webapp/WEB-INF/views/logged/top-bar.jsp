@@ -9,22 +9,22 @@
                     <button type="button" class="btn  btn-light block-center">${command.getTitle()}</button>
                 </a>
             </c:forEach>
-<%--            <a href="?command=show_create_account_page">--%>
-<%--                <button type="button" class="btn  btn-light block-center">Создать учетную запись</button>--%>
-<%--            </a>--%>
+            <%--            <a href="?command=show_create_account_page">--%>
+            <%--                <button type="button" class="btn  btn-light block-center">Создать учетную запись</button>--%>
+            <%--            </a>--%>
 
-<%--            <a href="?command=show_create_account_page">--%>
-<%--                <button type="button" class="btn  btn-light block-center">Создать конкурс</button>--%>
-<%--            </a>--%>
-<%--            <a href="?command=show_create_account_page">--%>
-<%--                <button type="button" class="btn  btn-light block-center">Список учетных записей--%>
-<%--                </button>--%>
-<%--            </a>--%>
+            <%--            <a href="?command=show_create_account_page">--%>
+            <%--                <button type="button" class="btn  btn-light block-center">Создать конкурс</button>--%>
+            <%--            </a>--%>
+            <%--            <a href="?command=show_create_account_page">--%>
+            <%--                <button type="button" class="btn  btn-light block-center">Список учетных записей--%>
+            <%--                </button>--%>
+            <%--            </a>--%>
 
-<%--            <a href="?command=show_create_account_page">--%>
-<%--                <button type="button" class="btn  btn-light block-center">Список конкурсов--%>
-<%--                </button>--%>
-<%--            </a>--%>
+            <%--            <a href="?command=show_create_account_page">--%>
+            <%--                <button type="button" class="btn  btn-light block-center">Список конкурсов--%>
+            <%--                </button>--%>
+            <%--            </a>--%>
 
         </div>
     </div>
@@ -33,7 +33,7 @@
 
         <b></span></spn><c:out value="${sessionScope.role}"/></b>
         <br/>
-        <c:out value="${sessionScope.name}"/> @<c:out value="${sessionScope.login}"/>
+        <c:out value="${sessionScope.login}"/>
         <br/>
         <a href="/?command=logout">
             <button type="button" class="btn  btn-dark block-center">logout

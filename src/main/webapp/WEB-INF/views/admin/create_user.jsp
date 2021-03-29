@@ -14,7 +14,7 @@
 </style>
 <html>
 <head>
-    <title>Список конкурсов</title>
+    <title>Создать учетную запись</title>
 </head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <body>

@@ -18,4 +18,5 @@ public interface UserDAO {
 	AuthenticationResults authenticate(String login, String password);
 	boolean isLoginExist(String login);
 	void createUser(String login, String password, String name, Roles role);
+    void editUser(int userId, String name, String password);
 }
