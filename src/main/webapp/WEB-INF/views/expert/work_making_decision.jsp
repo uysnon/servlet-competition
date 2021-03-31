@@ -63,9 +63,7 @@
                     <textarea
                             class="form-control"
                             name="comment"
-                            id="input_comment">
-
-                </textarea>
+                            id="input_comment"></textarea>
 
                     <br>
                     <button type="submit" name="mark" value="positive" class="btn btn-success">

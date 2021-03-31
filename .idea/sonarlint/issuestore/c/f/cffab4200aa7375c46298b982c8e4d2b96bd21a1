@@ -1,7 +1,9 @@
 
-‚
-java:S1488¨"_Immediately return this expression instead of assigning it to the temporary variable "instant".(š»Ûõşÿÿÿÿ8é‚ø¥…/
-N
-java:S1612R",Replace this lambda with a method reference.(şÙ¾ùÿÿÿÿ8ÔåÙ§…/
 I
-java:S1612’",Replace this lambda with a method reference.(àŒ—O8é‚ø¥…/
+java:S1612•",Replace this lambda with a method reference.(àŒ—O8é‚ø¥…/
+N
+java:S1612T",Replace this lambda with a method reference.(‡µ³Õıÿÿÿÿ8ÔåÙ§…/
+‚
+java:S1488«"_Immediately return this expression instead of assigning it to the temporary variable "instant".(š»Ûõşÿÿÿÿ8é‚ø¥…/
+f
+java:S2583S"DChange this condition so that it does not always evaluate to "false"(Ğ¬¿½øÿÿÿÿ8Óèôªˆ/

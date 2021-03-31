@@ -79,7 +79,10 @@ public class CreateCompetitionCommand implements Command {
         String strategyValue = request.getParameter(STRATEGY_VALUE_PARAM);
         String[] expertsIdsArray = request.getParameterValues(EXPERTS_PARAM);
 
-        List<Integer> expertsIdstIntList = Arrays.stream(expertsIdsArray).map(stringId -> Integer.parseInt(stringId)).collect(Collectors.toList());
+        List<Integer> expertsIdstIntList = null;
+        if (expertsIdsArray != null) {
+            expertsIdstIntList = Arrays.stream(expertsIdsArray).map(stringId -> Integer.parseInt(stringId)).collect(Collectors.toList());
+        }
         Instant endRegistrationInstant = null;
         Instant endSendingAnswersInstant = null;
         StrategyAdapters strategyAdapter = StrategyAdapters.valueOf(strategyName);
@@ -97,7 +100,7 @@ public class CreateCompetitionCommand implements Command {
             request.setAttribute(END_SENDING_ANSWERS_DATE_VALIDATION_RESULT_ATTRIBUTE, CompetitionDatesValidatorResults.INVALID_FORMAT);
         }
 
-        if (expertsIdsArray == null || expertsIdsArray.length <= 0){
+        if (expertsIdsArray == null || expertsIdsArray.length <= 0) {
             countFatalErrors++;
             request.setAttribute(EXPERTS_RESULT_ATTRIBUTE, ExpertsValidationResults.NO_EXPERTS);
         } else {

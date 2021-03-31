@@ -72,7 +72,7 @@ public class ShowCompetitionCommand implements Command {
     }
 
     private void addAdministratorActions(List<CommandEnum> availableActions) {
-        availableActions.add(CommandEnum.SHOW_CHANGE_COMPETITION_COMMAND);
+//        availableActions.add(CommandEnum.SHOW_CHANGE_COMPETITION_COMMAND);
     }
 
     private void addParticipateActions(List<CommandEnum> availableActions) {

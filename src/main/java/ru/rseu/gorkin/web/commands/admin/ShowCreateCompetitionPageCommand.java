@@ -21,8 +21,6 @@ public class ShowCreateCompetitionPageCommand implements Command {
     private final static String AVAILABLE_EXPERTS_KEY = "experts";
     private final static String AVAILABLE_STRATEGIES_KEY = "strategies";
 
-
-
     private static final String TASK_ATTRIBUTE = "task";
     private static final String END_REGISTRATION_DATE_ATTRIBUTE = "end_registration_date";
     private static final String END_REGISTRATION_TIME_ATTRIBUTE = "end_registration_time";

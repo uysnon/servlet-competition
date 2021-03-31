@@ -1,19 +1,19 @@
 
+H
+java:S1168E"+Return an empty collection instead of null.(¥¹ï8«Œ®¼‚/
+@
+java:S11489"#Use a logger to log this exception.(Óùóÿ8±à•ù„/
+[
+java:S1128">Remove this unused import 'ru.rseu.gorkin.datalayer.dto.User'.(äªç8ÌíºØ†/
+E
+java:S1148"#Use a logger to log this exception.(Ö·÷şÿÿÿÿ8×È¨‘…/
+H
+java:S1168+"+Return an empty collection instead of null.(¥¹ï8«Œ®¼‚/
+H
+java:S11680"+Return an empty collection instead of null.(¥¹ï8«Œ®¼‚/
+S
+java:S1128"1Remove this unused import 'java.util.Collection'.(¹ÉĞšùÿÿÿÿ8ÌíºØ†/
 €
 java:S14886"cImmediately return this expression instead of assigning it to the temporary variable "competition".(¦ªÄ’8ÌíºØ†/
 H
-java:S11680"+Return an empty collection instead of null.(¥¹ï8«Œ®¼‚/
-@
-java:S11489"#Use a logger to log this exception.(Óùóÿ8±à•ù„/
-H
 java:S1168@"+Return an empty collection instead of null.(¥¹ï8«Œ®¼‚/
-H
-java:S1168+"+Return an empty collection instead of null.(¥¹ï8«Œ®¼‚/
-E
-java:S1148"#Use a logger to log this exception.(Ö·÷şÿÿÿÿ8×È¨‘…/
-S
-java:S1128"1Remove this unused import 'java.util.Collection'.(¹ÉĞšùÿÿÿÿ8ÌíºØ†/
-H
-java:S1168E"+Return an empty collection instead of null.(¥¹ï8«Œ®¼‚/
-[
-java:S1128">Remove this unused import 'ru.rseu.gorkin.datalayer.dto.User'.(äªç8ÌíºØ†/

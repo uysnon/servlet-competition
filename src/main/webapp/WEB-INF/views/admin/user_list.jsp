@@ -45,7 +45,14 @@
                     <th scope="row">${user.login}</th>
                     <td>${user.name}</td>
                     <td>${user.status.description}</td>
-                    <td>${user.sessionsCount}</td>
+                    <td>
+                        <c:if test="${user.sessionsCount > 0}">
+                            [online]
+                        </c:if>
+                        <c:if test="${user.sessionsCount <= 0}">
+                            -
+                        </c:if>
+                    </td>
                     <td>
                         <c:choose>
                             <c:when test="${user.status == 'ACTIVE'}">
@@ -106,7 +113,14 @@
                     <th scope="row">${user.login}</th>
                     <td>${user.name}</td>
                     <td>${user.status.description}</td>
-                    <td>${user.sessionsCount}</td>
+                    <td>
+                        <c:if test="${user.sessionsCount > 0}">
+                            [online]
+                        </c:if>
+                        <c:if test="${user.sessionsCount <= 0}">
+                            -
+                        </c:if>
+                    </td>
                     <td>
                         <c:choose>
                             <c:when test="${user.status == 'ACTIVE'}">
@@ -164,7 +178,14 @@
                     <th scope="row">${user.login}</th>
                     <td>${user.name}</td>
                     <td>${user.status.description}</td>
-                    <td>${user.sessionsCount}</td>
+                    <td>
+                        <c:if test="${user.sessionsCount > 0}">
+                            [online]
+                        </c:if>
+                        <c:if test="${user.sessionsCount <= 0}">
+                            -
+                        </c:if>
+                    </td>
                     <td>
                         <c:choose>
                             <c:when test="${user.status == 'ACTIVE'}">

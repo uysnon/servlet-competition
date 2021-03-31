@@ -40,8 +40,7 @@
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1" class="col-form-label"><strong>Задание</strong></label>
                         <textarea name="task" class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                  required><c:out value="${task}"/>
-                        </textarea>
+                                  required><c:out value="${task}"/></textarea>
 
                     </div>
 
@@ -97,9 +96,7 @@
                                         value="${expert.id}"
                                     ${selected_experts.contains(expert.id) eq true ? 'selected' : ''}
                                 >
-                                        ${expert.name}(@${expert.login}
-
-
+                                        ${expert.name} @${expert.login}
                                 </option>
                             </c:forEach>
                         </select>

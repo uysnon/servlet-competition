@@ -1,50 +1,48 @@
 
-z
-java:S1104"XMake adminActions a static final constant or non-public and provide accessors if needed.(¹åé·ÿÿÿÿÿ8³†µÇ…/
-S
-java:S2696-"6Make the enclosing method "static" or remove this set.(œêú™8³†µÇ…/
-D
-java:S2386?"'Make member "guestActions" "protected".(¬—…æ8³†µÇ…/
-X
-java:S2696"6Make the enclosing method "static" or remove this set.(Âõ¨€úÿÿÿÿ8îÇ‚/
-z
-java:S1104"XMake guestActions a static final constant or non-public and provide accessors if needed.(ÅŞ¼¿üÿÿÿÿ8³†µÇ…/
-I
-java:S1199\"-Extract this nested code block into a method.(½˜»j8ü¯ÊÇ‚/
-X
-java:S2696&"6Make the enclosing method "static" or remove this set.(ËŸà±øÿÿÿÿ8³†µÇ…/
-T
-java:S1444"2Make this "public static guestActions" field final(ÅŞ¼¿üÿÿÿÿ8³†µÇ…/
 U
 java:S1444"3Make this "public static expertActions" field final(­²€ïûÿÿÿÿ8³†µÇ…/
-X
-java:S26968"6Make the enclosing method "static" or remove this set.(ÊÕğ‹ÿÿÿÿÿ8³†µÇ…/
-t	java:S131V"YComplete cases by adding the missing enum constants or add a default case to this switch.(’¼Ê+8¢›ÈÇ‚/
-V
-java:S1444"9Make this "public static loggedInUserActions" field final(ÜÉ»¨8³†µÇ…/
-{
-java:S1104"YMake expertActions a static final constant or non-public and provide accessors if needed.(­²€ïûÿÿÿÿ8³†µÇ…/
-O
-java:S1199W"-Extract this nested code block into a method.(˜æØÃúÿÿÿÿ8×åÈÇ‚/
-Ÿ
-java:S1186€"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î8ÈÎÑÇ‚/
-|
-java:S1104"_Make loggedInUserActions a static final constant or non-public and provide accessors if needed.(ÜÉ»¨8³†µÇ…/
-Z
-java:S1444"8Make this "public static participantActions" field final(áÔ‚İÿÿÿÿÿ8³†µÇ…/
-b
-java:S1128"@Remove this unused import 'ru.rseu.gorkin.web.commands.Command'.(ôÇ¦Æúÿÿÿÿ8´­«È‡/
-D
-java:S2386-"'Make member "adminActions" "protected".(œêú™8Æ¦ËÆ†/
-T
-java:S1444"2Make this "public static adminActions" field final(¹åé·ÿÿÿÿÿ8³†µÇ…/
 €
 java:S1104"^Make participantActions a static final constant or non-public and provide accessors if needed.(áÔ‚İÿÿÿÿÿ8³†µÇ…/
-J
-java:S1199a"-Extract this nested code block into a method.(ØÍ¢–8¡‹ÏÇ‚/
-P
-java:S2386".Make member "loggedInUserActions" "protected".(Âõ¨€úÿÿÿÿ8ÿÏ…/
-O
-java:S2386&"-Make member "participantActions" "protected".(ËŸà±øÿÿÿÿ8ŒøäÓ†/
+X
+java:S2696<"6Make the enclosing method "static" or remove this set.(ÊÕğ‹ÿÿÿÿÿ8³†µÇ…/
+T
+java:S1444"2Make this "public static guestActions" field final(ÅŞ¼¿üÿÿÿÿ8³†µÇ…/
 S
-java:S2696?"6Make the enclosing method "static" or remove this set.(¬—…æ8³†µÇ…/
+java:S2696C"6Make the enclosing method "static" or remove this set.(¬—…æ8³†µÇ…/
+t	java:S131Z"YComplete cases by adding the missing enum constants or add a default case to this switch.(’¼Ê+8¢›ÈÇ‚/
+T
+java:S1444"2Make this "public static adminActions" field final(¹åé·ÿÿÿÿÿ8³†µÇ…/
+z
+java:S1104"XMake guestActions a static final constant or non-public and provide accessors if needed.(ÅŞ¼¿üÿÿÿÿ8³†µÇ…/
+b
+java:S1128"@Remove this unused import 'ru.rseu.gorkin.web.commands.Command'.(ôÇ¦Æúÿÿÿÿ8´­«È‡/
+z
+java:S1104"XMake adminActions a static final constant or non-public and provide accessors if needed.(¹åé·ÿÿÿÿÿ8³†µÇ…/
+J
+java:S2386<"(Make member "expertActions" "protected".(ÊÕğ‹ÿÿÿÿÿ8§—Âû‡/
+V
+java:S1444"9Make this "public static loggedInUserActions" field final(ÜÉ»¨8³†µÇ…/
+O
+java:S1199["-Extract this nested code block into a method.(˜æØÃúÿÿÿÿ8×åÈÇ‚/
+D
+java:S2386C"'Make member "guestActions" "protected".(¬—…æ8³†µÇ…/
+X
+java:S2696("6Make the enclosing method "static" or remove this set.(ËŸà±øÿÿÿÿ8³†µÇ…/
+I
+java:S1199`"-Extract this nested code block into a method.(½˜»j8ü¯ÊÇ‚/
+S
+java:S2696/"6Make the enclosing method "static" or remove this set.(œêú™8³†µÇ…/
+Ÿ
+java:S1186„"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î8ÈÎÑÇ‚/
+O
+java:S2386("-Make member "participantActions" "protected".(ËŸà±øÿÿÿÿ8ŒøäÓ†/
+J
+java:S1199e"-Extract this nested code block into a method.(ØÍ¢–8¡‹ÏÇ‚/
+|
+java:S1104"_Make loggedInUserActions a static final constant or non-public and provide accessors if needed.(ÜÉ»¨8³†µÇ…/
+{
+java:S1104"YMake expertActions a static final constant or non-public and provide accessors if needed.(­²€ïûÿÿÿÿ8³†µÇ…/
+X
+java:S2696"6Make the enclosing method "static" or remove this set.(Âõ¨€úÿÿÿÿ8îÇ‚/
+Z
+java:S1444"8Make this "public static participantActions" field final(áÔ‚İÿÿÿÿÿ8³†µÇ…/

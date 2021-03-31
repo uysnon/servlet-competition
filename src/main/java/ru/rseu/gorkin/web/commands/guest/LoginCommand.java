@@ -43,6 +43,7 @@ public class LoginCommand implements Command {
             request.getSession().setAttribute(ConfigurationManagers.WEB_MANAGER.getProperty("session.attribute.role"), user.getRole());
             request.getSession().setAttribute(ConfigurationManagers.WEB_MANAGER.getProperty("session.attribute.id"), user.getId());
             request.getSession().setAttribute(ConfigurationManagers.WEB_MANAGER.getProperty("session.attribute.name"), user.getName());
+//            request.getSession().setMaxInactiveInterval(10);
             response.sendRedirect(UrlUtils.getCommandUrl(findFirstShowCommandAccordingToUser(user)));
         } else {
             request.setAttribute("errorLoginPassMessage", authenticationResult.getDescription());

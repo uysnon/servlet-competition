@@ -68,9 +68,7 @@
                     <c:if test="${not is_answer_editable}">
                         readonly
                     </c:if>
-            >
-                ${answer}
-            </textarea>
+            >${answer}</textarea>
             <br>
             <c:if test="${is_answer_editable}">
                 <button type="submit" class="btn btn-warning btn-dark">

@@ -5,10 +5,13 @@ import ru.rseu.gorkin.resources.utils.ConfigurationManager;
 import ru.rseu.gorkin.resources.utils.ConfigurationManagers;
 
 import java.sql.*;
+import java.text.DateFormat;
 import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.TimeZone;
 import java.util.function.Function;
 
 public class OracleQueriesUtils {
@@ -124,13 +127,17 @@ public class OracleQueriesUtils {
 
     public int addCompetition(Connection connection, String task, StrategyAdapters.StrategySQL strategySQL, Instant endRegistrationDate, Instant endSendingAnswersDate) throws SQLException {
         String query = ConfigurationManagers.SQL_MANAGER.getProperty("query.competition.add");
+        Timestamp endRegistrationTimestamp = Timestamp.from(endRegistrationDate.plus(-3, ChronoUnit.HOURS));
+        Timestamp endSendingAnswersTimestamp = Timestamp.from(endSendingAnswersDate.plus(-3, ChronoUnit.HOURS));
 
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setString(1, task);
         preparedStatement.setInt(2, strategySQL.getId());
         preparedStatement.setDouble(3, strategySQL.getValue());
-        preparedStatement.setTimestamp(4, Timestamp.from(endRegistrationDate));
-        preparedStatement.setTimestamp(5, Timestamp.from(endSendingAnswersDate));
+
+        preparedStatement.setObject(4, endRegistrationTimestamp);
+
+        preparedStatement.setObject(5, endSendingAnswersTimestamp);
         preparedStatement.executeUpdate();
 
         int generatedId = -1;
